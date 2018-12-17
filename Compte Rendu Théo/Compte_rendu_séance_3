@@ -1,0 +1,18 @@
+Compte rendu de la Séance du 17/12/18
+
+Objectif : Réaliser la Transformée de Fourier d'un signal sonore via l'Arduino, et afficher le résultat sur l'écran.
+
+I - Recherche d'une librairie adaptée
+
+  Après des recherche, on trouve qu'il est plus pratique et efficace de réaliser la FFT via le PC plutôt que via l'Arduino.
+  Nous allons donc essayer cette méthode en premier, pour ensuite essayer de le réaliser via Arduino.
+  Nous allons récupérer un fichier en format .mp3 que l'on va traiter via Processing, anvant d'envoyer le résultat à l'Arduino.
+  L'Arduino va enfin demander à l'écran d'afficher le résultat.
+  
+II - Application
+
+   On arrive à traiter les données via FFT et ouvrir le fichier son. On a finalement réussi à réaliser à afficher le résultat sur l'écran,
+   comme on peut le voir sur la vidéo ci-dessous.
+   Il faut améliorer l'affichage pour que se soit plus lisible, mais pour le moment c'est un succès.
+   Le résultat s'affiche presque en temps réél, ce qui est concluant. 
+  
