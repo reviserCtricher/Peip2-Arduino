@@ -45,7 +45,7 @@ float f;
 void setup() {
   size(200, 200);
   minim = new Minim(this);
-  in = minim.loadFile("Rem.mp3");
+  in = minim.loadFile("Oasis.mp3");
   in.loop();
 
   port = new Serial(this, serial_port, baud_rate); //set baud rate
