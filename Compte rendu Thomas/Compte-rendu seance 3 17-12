@@ -1,0 +1,22 @@
+Decottignies Thomas
+Projets Arduino 2018/2019
+                                Compte-rendu 
+Le 17/12:
+
+Activités :
+
+Test de plusieurs librairies Arduino pour la fft. Après plusieurs essais infructueux nous avons choisi d'utiliser le logiciel Processing
+sur PC et de revenir a un traitement FFT via arduino plus tard. 
+
+Détail:
+
+Notre premier essai d'affichaage des fréquences utilise la librairie Minim de processing qui permet la lecture de fichiers audios et 
+dispose d'outils de traitement du signal.Dans cette premiève version Processing "découpe" le signal en fréquences et utilise l'intensité 
+pour définir la taille des pics à dessiner. Pour se faire nous avons créé une matrice( Array) avec l'ensemble des valeurs à afficher.
+Une fois le traitement effectué, les informations sont envoyées à l'arduino qui dessine (methode draw) les pics . 
+Nous nous sommes en rande partie inspirés des travaux du git hub https://github.com/afreiday dont la plus grosse modification à effectuer 
+etait de lire un fichier audio plutot qu'une sortie d'une carte son par exemple.
+
+Test: 
+
+Quoi de mieux pour essayer notre modélisation de fréquences que du Oasis ? 
