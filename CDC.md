@@ -6,7 +6,7 @@ Fonctions Principales
 
 2) Envoyer des informations depuis un smartphone/orginateur jusqu’à l’Arduino via BlueTooth (1 séance)
 
-3) Opérer une Transformation Rapide de Fourier (FFT en anglais) via un pc et via l’Arduino. Transférer les informations via Bluetooth entre le PC et l'arduino. (2-3 séances)
+3) Opérer une Transformation Rapide de Fourier (FFT en anglais) via un pc et via l’Arduino. Transférer des données en Bluetooth (fichier son / données processing) d'un ordinateur vers l'arduino afin d'opérer à l'affichage des fréquences . 
 
 4) Afficher le résultat de la FFT d’une façon à la fois informative et esthétique (1 à 2 séances)
 
