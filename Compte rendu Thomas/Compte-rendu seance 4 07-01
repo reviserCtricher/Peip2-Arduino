@@ -3,17 +3,24 @@ Projet Arduino 2018/2019
                                                   Compte rendu seance 4:
 
 Activités : 
+
 Etablissement de la connexion BT entre le PC et l'arduino. Réparation de beugs mineures de l'affichage .
 Début du code sous arduino pour qu'il effectue la FFT seule (recherches)
 
 Détail: 
-Le module HC-06 etant deja branché et prêt a l'utilisation , nous avons eu a modifier la sortie COM (ligne 32 processFFT "String serial_port = "COM7";) 
-qui est automatiquement crée à la première connexion BT sous windows . Maintenant l'arduino est alimenté par le courant et ne necessite plus de 
-connexion filaire. Nous avons modifié le code d'affichage (affFFT.ino) pour centrer le spectre sur notre écran et reviendrons sur l'aspect 
-esthétique plus tard. Nous avons passé pas mal de temps à chercher une solution préfaite pour executer une FFT + affichage via l'arduino ; cette recherche 
-etait infructueuse car les projets que nous avons trouvé utilisent pour la plupart Processing comme nous l'avons fait (question de rapidité et de simplicité) . 
-Toutefois nous avons vu à plusieurs reprises que c'etait possible mais les codes n'etaient pas fournis. Nous avons donc décidé de transposer le code de 
-traitement processing sur l'arduino en remplçant la librairie minim par le module fft.h (faute de mieux reste à améliorer) et en remplçant la sortie OUT (Serial PC-Arduino) 
-par une variable intermédiaire entre traitement et affichage. Nous avons rencontré quelques problèmes mineures de traduction Java --> C++ notemment dans la création de tableaux 
-de valeurs dynamiques. Le programme est bien avancé mais reste à terminer et tester . Nous prévoyons par la suite de remplcer le module FFT présent par un module à point 
-de traitement fixe qui sacrifie de la précision au profit de la vitesse de traitement .
+
+Le module HC-06 etant deja branché et prêt a l'utilisation , nous avons eu a modifier la sortie COM 
+(ligne 32 processFFT "String serial_port = "COM7";) qui est automatiquement crée à la première connexion BT sous windows .
+Maintenant l'arduino est alimenté par le courant et ne necessite plus de connexion filaire. 
+
+Nous avons modifié le code d'affichage (affFFT.ino) pour centrer le spectre sur notre écran et reviendrons sur l'aspect esthétique 
+plus tard.
+
+Nous avons passé pas mal de temps à chercher une solution préfaite pour executer une FFT + affichage via l'arduino ; cette recherche était
+infructueuse car les projets que nous avons trouvé utilisent pour la plupart Processing comme nous l'avons fait (question de rapidité et 
+de simplicité) . Toutefois nous avons vu à plusieurs reprises que c'etait possible mais les codes n'etaient pas fournis. Nous avons donc 
+décidé de transposer le code de traitement processing sur l'arduino en remplçant la librairie minim par le module fft.h (faute de mieux 
+reste à améliorer) et en remplçant la sortie OUT (Serial PC-Arduino) par une variable intermédiaire entre traitement et affichage. 
+Nous avons rencontré quelques problèmes mineures de traduction Java --> C++ notemment dans la création de tableaux de valeurs dynamiques.
+Le programme est bien avancé mais reste à terminer et tester . Nous prévoyons par la suite de remplcer le module FFT présent par un 
+module à point de traitement fixe qui sacrifie de la précision au profit de la vitesse de traitement .
