@@ -1,0 +1,20 @@
+Théo Picke
+PEIP2 G1
+
+Séance 4 (07/01/19)
+
+Objectifs du groupe :
+ - Effectuer le transfert des informations entre le PC et l'Arduino via Bluetooth.
+ - Effectuer la FFT via l'Arduino plutôt que via PC (Processing)
+ 
+Mes objectifs :
+  - Travailler en duo avec Thomas pour réaliser les objectifs du groupe
+  
+Transfert des informations via BT:
+ - Le transfert BT est opérationnel : nous avons du augmenter la vitesse de transmission au maximum pour éviter les latences,
+ mais le transfert est maintenant quasi instantanné. L'arduino n'a plus besoin d'être branchée au PC 
+ - Nous avons rencontré des difficultés à passer d'un code fonctionnel sur Processing à un autre code fonctionnel quoique similaire sur bien des aspects sur Arduino.
+ En effet, les FFT sont réalisée par des librairies différentes, dans des langages différents, avec quelques modifications,
+ dues au fait qu'il faut envoyer directement le morceau de musique via BT puis le traiter et pas l'inverse.
+ Nous avons donc du laisser de côté cette option, car Internet n'était pas d'un grand secours (la grande majorité des résultats utilisaient Processing pour la FFT).
+ 
