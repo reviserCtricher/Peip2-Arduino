@@ -1,0 +1,9 @@
+Compte rendu seance 4:
+
+Objectifs : 
+Etablissement de la connexion BT entre le PC et l'arduino. Reparation de beugs mineures et de l'affichage .
+dEbut du code sous arduino pour qu'il effectue la FFT seule.
+
+Etat: 
+Le module HC-06 etant deja branché et prêt a l'utilisation , nous avons eu a modifier la sortie COM (ligne 32 processFFT "String serial_port = "COM7";) 
+qui est automatiquement crée à la première connexion BT sous windows . Maintenant l'arduino est alimenté par le courant et ne necessite plus de connexion filaire.
