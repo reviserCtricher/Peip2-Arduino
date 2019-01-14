@@ -13,7 +13,7 @@ d'envoyer un signal sonore sur le module HC06 en s'y connectant via un périphé
 en lecture en temps réel. Nous étions parti du postulat que le signal serait alors simplement traité par notre programme après avoir été reçu
 sur le port comm3 de notre arduino méga. Le programme duquel nous sommes partis pour écrire la version Arduino prenait en entrée un signal 
 analogique (micro / potentiomètre) , effectuait une FFT grâce au module FFT.h que nous comptions utiliser et nous y avons ajouté la librairie
-de notre écran en utilisant une fonction simple ("drawLine") pour faire un premier dessin de spectre audio.
+de notre écran en utilisant une fonction simple ("matrix.drawLine") pour faire un premier dessin de spectre audio.
 
 Premier problème , il n'est pas possible de simplement se connecter au HC06 comme un simple périphérique média; il est nécessaire d'utiliser 
 une application compatible (type BT electronics) qui soit capable de faire transiter une fichier audio depuis le téléphone vers l'arduino.
@@ -25,3 +25,6 @@ cherchons pour le moment un module de hashage capable de découper le fichier au
 Si nous n'y parvenons pas nous avons pour le moment une solution de secours qui consite à brancher un micro et voir si notre programme 
 de FFT fonctionne . Nous pourrons par la suite envisager un micro de meilleure qualité ou une solutions de conversion des fichiers mp3 / 
 un module avec prise jack pour capter un signal sonore traité et envoyé depuis n'importe quelle source audio. 
+
+La version alpha du traitement par arduino se trouve dans le fichier "spectrum.ino" , je vais essayer d'installer au plus vite le micro 
+sur l'arduino et tester ce programme avec cette source audio. Les résultats figureront en image dans le prochain compte rendu . 
