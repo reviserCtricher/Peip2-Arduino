@@ -1,13 +1,6 @@
 /*
  * Arduino Spectrum Analizer
- * 
- * learnelectronics
- * 27 April 2017
- * black magic stolen from CBM80Amiga
- * 
- * www.youtube.com/c/learnelectronics
- * arduino1069@gmail.com
- * 
+
  * Fix_FFT library available @ https://github.com/kosme/arduinoFFT
  */
 
