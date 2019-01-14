@@ -1,1 +1,27 @@
+Decottignies Thomas
+Projet Arduino 2018/2019
+                                                  Compte rendu seance 5:
 
+Activités : 
+
+Recherche d'une solution pour effectuer le traitement via arduino . Présentaton de l'oral.
+
+Détail: 
+
+Nous avons rencontré une série de problèmes successifs à cette étape de notre projet . En effet comme vu précédemment nous projettions 
+d'envoyer un signal sonore sur le module HC06 en s'y connectant via un périphérique mobile capable de lire un fichier audio et de l'envoyer 
+en lecture en temps réel. Nous étions parti du postulat que le signal serait alors simplement traité par notre programme après avoir été reçu
+sur le port comm3 de notre arduino méga. Le programme duquel nous sommes partis pour écrire la version Arduino prenait en entrée un signal 
+analogique (micro / potentiomètre) , effectuait une FFT grâce au module FFT.h que nous comptions utiliser et nous y avons ajouté la librairie
+de notre écran en utilisant une fonction simple ("drawLine") pour faire un premier dessin de spectre audio.
+
+Premier problème , il n'est pas possible de simplement se connecter au HC06 comme un simple périphérique média; il est nécessaire d'utiliser 
+une application compatible (type BT electronics) qui soit capable de faire transiter une fichier audio depuis le téléphone vers l'arduino.
+Nous nous sommes donc penchés sur le site internet MIT APP INVENTOR qui permet de créer des applications capables de prendre en charge le 
+module BT de notre arduino. Toutefois il reste un détail à arranger , on ne peut pas simplement envoyer un fichier mp3 que l'arduino ne 
+comprendra pas sous cette forme, il faut le lire sur le téléphone et demander à l'application d'envoyer le signal via BT. Pour cela nous 
+cherchons pour le moment un module de hashage capable de découper le fichier audio et qui soit compatible avec l'application du MIT.
+
+Si nous n'y parvenons pas nous avons pour le moment une solution de secours qui consite à brancher un micro et voir si notre programme 
+de FFT fonctionne . Nous pourrons par la suite envisager un micro de meilleure qualité ou une solutions de conversion des fichiers mp3 / 
+un module avec prise jack pour capter un signal sonore traité et envoyé depuis n'importe quelle source audio. 
