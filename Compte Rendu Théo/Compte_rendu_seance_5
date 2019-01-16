@@ -1,0 +1,20 @@
+Théo Picke
+PEIP2 G1
+
+Séance 5 (14/01/19)
+
+Objectifs du groupe : - Effectuer la FFT via l'Arduino plutôt que via PC (Processing)
+
+Mes objectifs : Travail en duo avec Thomas pour réaliser l'objectif du groupe (dernière séance avant de passer à l'affichage)
+
+FFT via Arduino :
+
+    Nous avons trouvé des exemples de FFT réalisées par Arduino, et nous avons essayé d'adapter nos programmes pour qu'ils soient en accord avec notre projet. Nous avons rencontré quelque difficultés :
+en effet, on ne dispose pas d'application permettant la lecture d'un fichier Bluetooth.
+Il nous faut donc une application pour téléphone adaptée.
+De plus, les exemples trouvés utilisent des micros pour faire la conversion.
+   
+Type de données d'un fichier mp3 :
+
+   Nous utiliserons l'application MIT app Inventor, qui nous permettra de créer une application adapté pour ce qu'on cherche à faire : à son lancement, l'application nous envoie les données du fichier mp3 sous une forme particulière, qui sera ensuite lue par l'Arduino, en même temps que l'application lance la musique sur le téléphone. 
+On ne pourra plus lancer l'application depuis le PC, mais ce n'est pas vraiment problématique, car on dispose toujours du programme utilisant Processing pour réaliser la FFT. Nous avons terminé la séance après nous être familiarisé avec MIT app Inventor.
