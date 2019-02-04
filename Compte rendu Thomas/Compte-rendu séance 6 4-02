@@ -31,7 +31,8 @@ sans pour autant pouvoir expliquer son fonctionnement.
 -Maintenant que nos deux versions du projet sont au point , nous avons décidé de fixer les deux montages avec deux cartes arduino Mega. De 
 cette façon nous pourrons comparer les deux sources du signal , celle du fichier audio et celle perçue depuis l'enceinte avec le micro.
 Nous prévoyons d'autres améliorations notemment quant à l'utilisation du micro , nous cherchons actuellement une solution au problème 
-de trop basse sensibilité du ky 037...
+de trop basse sensibilité du ky 037 en jouant avec des facteurs sur la valeur prise par la tension du micro (multiplier le signal analogique
+par une constante) , élaborer un ampli ou tout simplement se procurer un autre modèle made in amazon à moindre coût.
 
 Exemples :
 
