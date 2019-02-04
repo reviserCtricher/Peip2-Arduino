@@ -5,15 +5,57 @@ Objectifs du groupe :    - Réaliser la FFT uniquement via Arduino
                          - Afficher les résultats de la FFT via deux méthodes différentes sur deux écrans distincts
                        
 Objectifs personnels :   - Améliorer l'esthétique et la lisibilité de ce qui se trouve sur l'écran
-                         - Réaliser le cablage pour le second écran et la seconde carte Arduino
+                         - Réaliser le cablage et les tests pour le second écran et la seconde carte Arduino
 
 Améliorer l'esthétique et la lisibilité de ce qui se trouve à l'écran :
 
   Notre objectif consiste à modifier la façon d'afficher le résultat obtenu par les deux méthodes FFT, afin de les rendre agréable à l'oeil.
   Pour ce faire, on observe que le résultat actuel de la FFT via Processing est un ensemble de points occupant la moitié de l'écran, centré, 
-  et avec des espaces vides, comme dans le code ci-dessous :
+  et avec des espaces vides.
   
-  
-  
- Pour améliorer le résultat, on a décidé.
-A.Finir.
+ Pour améliorer le résultat, on a décidé d'afficher le résultat sur toute la longueur de l'écran, sans les espaces vides.
+ On ajoute également un rectangle rouge pour situer le bord. On modifie le code de affFFT.ino de la façon suivante :
+ 
+  if (ff > last[f]) {
+        for(int y = last[f]; y <= ff; y++) {
+          int x = 62 - x0;
+          color = y > RED_PEAK ? red : blue;
+          matrix.drawPixel(x, 2*y, color);
+          matrix.drawPixel(x, 2*y+1, color); 
+          matrix.drawPixel(x+1, 2*y, color); 
+          matrix.drawPixel(x+1, 2*y+1, color); 
+        }
+      } else if (last[f] > ff) {
+        color = black;
+        for(int y = last[f]; y > ff; y--) {
+          matrix.drawPixel(62-x0, 2*y, color);
+          matrix.drawPixel(62-x0, 2*y+1, color); 
+          matrix.drawPixel(63-x0, 2*y, color); 
+          matrix.drawPixel(63-x0, 2*y+1, color); 
+          }
+      }
+ 
+ On réalise des modifications similaires pour l'autre type FFT.
+ 
+ On obtient un résultat que l'on peut observer ici (vidéo):
+ https://www.youtube.com/watch?v=92GyNI3pX3M&feature=youtu.be&fbclid=IwAR231sjH7EcxXZ39qKaTRLH5E1xhOEmOWH9uOTdggQGfSnt8TMt7B9tbljU
+ 
+ Réaliser le cablage de la seconde Arduino:
+ 
+ La seconde Arduino utilisera une autre méthode de FFT : un micro récupérera l'information sonore nécessaire, puis l'Arduino réaslisera
+ directement la transformation. Nous avons utilisé initialement une Arduino Due, plus puissante, pour s'assurer que l'Arduino pourrait
+ réaliser toutes les opérations qu'elle doit réaliser. Nous avons malheureusement découvert que la libraire fix_fft n'était pas
+ adaptée pour être utilisée par une Arduino Due. Nous avons donc échangé la Due contre une Arduino Méga, et refait les branchements.
+ Heureusement, la Méga réussit à exécuter le programme spectrum.ino sans gros problème. Le résultat est assez concluant, au défaut
+ notable que le micro est très peu sensible, et qu'il faut placer la musique particulièrement près pour que le micro capte une 
+ différence. Nous pourrons ainsi comparer les deux spectres de Fourier obtenus par les deux méthodes.
+ 
+ Conclusion : 
+ On notera qu'à la fin de cette séance, on dipose de deux moyens pour obtenir le résultat d'une FFT sur l'écran 
+ sans avoir à relier le système par autre chose que des cables d'alimentation. Il est donc maintenant temps de travailler
+ plus en profondeur sur des moyens d'améliorer l'esthétique, en modifiant encore la façon dont le résultat est affiché
+ mais aussi en dissimulant les dispositifs auquels on a pas besoin d'intéragir pour le fonctionement: les Arduinos, micros,
+ enceintes, et le cablage.
+ On devra également faire en sorte de pouvoir accéder facilement à ces derniers si l'on souhaite procéder à des modifications.
+ 
+ 
