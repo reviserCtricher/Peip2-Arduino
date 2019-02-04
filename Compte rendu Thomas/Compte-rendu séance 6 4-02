@@ -1,0 +1,32 @@
+Decottignies Thomas
+Projet Arduino 2018/2019
+                                                  Compte rendu seance 6:
+Activités :
+-Amelioration esthétique de la version utilisant processing 
+-Changement et utilisation du micro dans la version du projet n'utilisant que l'arduino pour la FFT
+-Finalisation du code permettant la FFT à point fixe 
+-Utilisation de deux arduino et écrans pour ne plus à avoir à alterner entre les deux montages.
+
+Détail : 
+
+-Notre première activité de la séance etait de modifier l'affichage sur l'ecran LCD afin que le spectre occupe la totalité de l'écran . 
+Ajout de lignes supplémentaires au programme affFFT.ino afin d'épaissir la largeur des "bandes" de notre spectre. Nous n'avons en effet pas 
+modifié le traitement processing du signal mais seulement la façon dont nous le représentons.
+
+-Le micro que nous voulions utiliser afin de tester la FFT via arduino etant défectueux , nous l'avons changé et fort heureusement le test
+a montré que le micro etait la seule cause de notre échec. La bibliothèque que nous utilisons (fix_fft.h) fonctionne de la manière suivante : 
+plutot que d'effectuer une transformée de Fourier en temps réel sur le lignal sonore , la transformée dite "à point de traitement fixe" 
+capture des "samples" avec le micro et les traite un par un à une cadence bien inférieure à du temps réel. A l'aide de cette méthode le 
+traitement ne demande que très peu de ressources (un arduino uno suffirait potentiellement) , c'est pour cette raison que nous n'utiliserons 
+pas la carte DUE mentionnée précédemment . Autre point contre-indicatif à l'utilisation de cette carte est qu'elle utilise un processeur 
+ARM (contre AVN) qui n'est pas compatible avec la plupart des librairies que nous utilisons .
+
+-Le fonctionnement du programme de notre traitement du signal sonore capté avec un micro fonctionne sur le même principe que le précédent.
+Les fréquence sont triées et modélisées par des barres verticales régulièrement espacées et représentant les fréquences à afficher. 
+Toutefois une ligne de notre programme est héritée de nos recherches internet :
+"int dat = sqrt(data[i] * data[i] + im[i] * im[i]);" qui , selon les différentes sources sur l'utilisation de la FFT filtrerait par une astuce 
+mathématique le bruit capté par le micro et rendrait le signal plus clair. Tout ce que nous avons pu constater c'est que la méthode marche 
+sans pour autant pouvoir expliquer son fonctionnement.
+
+-Maintenant que nos deux versions du projet sont au point , nous avons décidé de fixer les deux montages avec deux cartes arduino Mega. De 
+cette façon nous pourrons comparer les deux sources du signal , celle du fichier audio et celle perçue depuis l'enceinte avec le micro.
