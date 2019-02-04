@@ -1,0 +1,18 @@
+PICKE Théo                     Compte rendu de la séance du 04/02/19 
+
+Objectifs du groupe :    - Réaliser la FFT uniquement via Arduino
+                         - Améliorer l'esthétique et la lisibilité de ce qui se trouve sur l'écran
+                         - Afficher les résultats de la FFT via deux méthodes différentes sur deux écrans distincts
+                       
+Objectifs personnels :   - Améliorer l'esthétique et la lisibilité de ce qui se trouve sur l'écran
+                         - Réaliser le cablage pour le second écran et la seconde carte Arduino
+
+Améliorer l'esthétique et la lisibilité de ce qui se trouve à l'écran :
+
+  Notre objectif consiste à modifier la façon d'afficher le résultat obtenu par les deux méthodes FFT, afin de les rendre agréable à l'oeil.
+  Pour ce faire, on observe que le résultat actuel de la FFT via Processing est un ensemble de points occupant la moitié de l'écran, centré, 
+  et avec des espaces vides, comme dans le code ci-dessous :
+  
+  
+  
+ Pour améliorer le résultat, on a décidé.
