@@ -1,0 +1,41 @@
+Decottignies Thomas
+Projet Arduino 2018/2019
+
+                                                     Compte rendu seance 7:
+Activites:
+
+-consolidation du boitier d'allimentation 
+-changement de module BT
+-tests frequenciels des deux FFT 
+-preparation des plans de la boîte du projet 
+-prise de mesures pour le rendu final
+ 
+Detail:
+
+Le boitier d'allimentation fourni avec l'ecran présentait des faiblesses au niveau de ses branchements , notemment la terre qui s'etait 
+arrachée. Nous avons coupé les anciennes fiches , dénudé les fils et réparé les branchements. Nous avons aussi pris la précaution de mettre
+un point de soudure en plus pour etre sur que les branchements ne se deteriorent pas de nouveau à l'avenir.
+
+Durant nos tests, nous avons été surpris par une panne imprévue. Le module BT a tout simplement grillé mettant notre carte en court-circuit.
+Après identification de la panne qui causait l'echec du fonctionnement même de l'arduino, nous avons pu la réparer sans trop de soucis en 
+changeant de module BT. 
+
+Quelques paramétrages plus tard nous avons enfin pu effectuer un test concret en comparant les performances de nos deux modules FFT.
+Nous avons pour cela amené pour l'occasion une enceinte portable assez puissante pour être entendue par le micro de l'arduino et nous 
+avons utilisé un extrait sonore sur youtube (20hz --> 20khz) . Sans surprise la librairie processing qui traite directement le fichier 
+sonore est bien plus rapide et plus précise . La version micro présente un seuil de sensibilité ne permettant pas l'affichage aussi précis,
+les fréquences optimales étant comprises en 400 et 800hz d'après nos observations. Nous avons augmenté ce niveau de sensibilité en 
+multipliant par un facteur 25 la valeur analogique captée par le micro. Sur les conseils de monsieur Masson nous avons fait des recherches
+complémentaires sur la possibilité de modifier la fréquence de l'entrée analogique pour tirer plainement profit des capacités du microphone.
+Malheureusement l'arduino ne permet pas au premier abord un tel contrôles sur ses pins (hormis pwm). Les ébauches que nous avons trouvé 
+utiles à l'adresse suivante http://www.gammon.com.au/adc parlent d'un réglage pour des fréquences allant de 125 à 8000 khz mais cela 
+concerne l'ensemble des prescaleurs de l'arduino pouvant rentrer enconflit avec notre matériel et nos librairies. Nous décidons donc de 
+se contenter du traitement actuel avec des améliorations futures mineures. 
+
+Nous avons pris des mesures des différents éléments de notre projet (écrans , cartes , alim) afin d'essayer de rentrer le tout dans 
+une boîte la plus compacte possible et esthétiquememnt acceptable. Les plans de la boîte seront uploadés au plus vite et nous espérons 
+avoir le temps de contacter le Fablab au plus vite afin de la construire. 
+
+Nous avons rempli les principaux objectifs de notre cahier des charges , et considérons donc le projet comme fini en tant que tel.
+Toutefois nous allons continuer à apporter des mises à jour de performances et/ou d'esthétisme et pourquoi pas de nouvelles fonctions 
+faisant appel au travail accompli.
