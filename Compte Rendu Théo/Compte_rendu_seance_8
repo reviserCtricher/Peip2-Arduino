@@ -1,0 +1,74 @@
+PICKE Théo                     Compte rendu de la séance du 11/02/18 
+
+
+
+Objectifs du groupe :    - Comparer les deux méthodes de FFT précèdement créées
+
+                         - Réaliser des tests avec le micro et les hauts-parleurs
+
+                         - Préparer des plans pour une boite afin améliorer l'esthétique et déplacer facilement les systèmes.
+
+                         - Réparer et fixer les cablages afin de faciliter les manipulations
+
+                       
+
+Objectifs personnels :   - Concevoir les plans et les dimensions de la boite
+
+                         - Réparer et fixer les cablages afin de faciliter les manipulations
+
+
+
+Concevoir les plans et les dimensions de la boite :
+
+  A cette étape de notre projet, nous n'aurons probablement plus à modifier en profondeur les montages et changer
+  
+  de dispositifs utilisés. Il est donc temps de concevoir un objet nous permettant de déplacer l'ensemble des montages,
+  
+  tout en pouvant y accéder en cas de problème. Pour des raisons esthétiques, nous allons également dissimuler les cables d'alimentations,
+  
+  Arduinos, haut-parleur, générateur et les modules BT. 
+  
+  Pour cela, nous avons fait le choix de créer une boite en bois. Les plans sont dans le document PDF "Boite-Arduino".
+  
+  A l'intérieur on y rangera tout le système ainsi qu'une multiprise, afin de n'avoir à brancher qu'un cable à la prise d'alimentation.
+ 
+  Les écrans seront posés et vissés sur la pièce 3, et les autres parties du système seront fixées 
+  
+  sur les parois via des vis ou du scotch. On prend une légère marge d'erreur sur les dimensions, afin d'éviter les problèmes 
+  
+  liés aux imprécisions. On peut accéder au système en ouvrant les panneaux situés sous la boite (pièces 4), 
+  
+  et les trous servent de poignées et laissent passer le cable de la multiprise pour l'alimentation. 
+  
+  On posera une plaque transparente scotchée à la boite sur la surface supérieure (avec les écrans) afin d'améliorer le rendu. 
+ 
+  L'autre avantage est que la boite est assez facile à construire, car elle nécessite uniquement des pièces en bois de même
+  
+  épaisseur et du matériel de bricolage rudimentaire. Découper la plaque transparente sera plus compliqué.
+ 
+
+ Réparer et fixer les cablages afin de faciliter les manipulations:
+
+ Afin d'éviter d'avoir à refaire les cablages après chaque manipulation, nous avons scotché certains cables entre eux. De plus,
+ 
+ il était nécessaire de réparer le cable d'alimentation pour le générateur pour les écrans LED, étant donné qu'il commençait à être
+
+ dans un état sérieux. Nous avons donc soudé puis revissé chaque cable, afin d'éviter tout problème futur. L'image du générateur
+ 
+ après cette réparation est disponible dans le même dossier, sous le nom ".jpg".
+ 
+ 
+ Problèmes :
+ 
+ Pendant nos manipulations, un des modules BT a fait un court-circuit. Il nous a fallu du temps pour résoudre ce problème, qui a été
+ 
+ perdu sur la séance.
+
+ Conclusion : 
+
+ On notera qu'à la fin de cette séance, nous n'avons que peu ou pas travaillé sur l'affichage des FFTs via l'Arduino.
+ 
+ Ce travail sera réalisé pendant la semaine, afin de ne pas prendre de retard superflu. Cependant, nous sommes bientôt prêts pour
+ 
+ construire la boite, ce que nous ferons peut-être pendant la semaine.
+ 
