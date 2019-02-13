@@ -16,6 +16,8 @@ Le boitier d'allimentation fourni avec l'ecran présentait des faiblesses au niv
 arrachée. Nous avons coupé les anciennes fiches , dénudé les fils et réparé les branchements. Nous avons aussi pris la précaution de mettre
 un point de soudure en plus pour etre sur que les branchements ne se deteriorent pas de nouveau à l'avenir.
 
+https://photos.app.goo.gl/UzJ9YNksZt9ikjmr8
+
 Durant nos tests, nous avons été surpris par une panne imprévue. Le module BT a tout simplement grillé mettant notre carte en court-circuit.
 Après identification de la panne qui causait l'echec du fonctionnement même de l'arduino, nous avons pu la réparer sans trop de soucis en 
 changeant de module BT. 
@@ -31,6 +33,8 @@ Malheureusement l'arduino ne permet pas au premier abord un tel contrôles sur s
 utiles à l'adresse suivante http://www.gammon.com.au/adc parlent d'un réglage pour des fréquences allant de 125 à 8000 khz mais cela 
 concerne l'ensemble des prescaleurs de l'arduino pouvant rentrer enconflit avec notre matériel et nos librairies. Nous décidons donc de 
 se contenter du traitement actuel avec des améliorations futures mineures. 
+
+https://photos.app.goo.gl/UzJ9YNksZt9ikjmr8
 
 Nous avons pris des mesures des différents éléments de notre projet (écrans , cartes , alim) afin d'essayer de rentrer le tout dans 
 une boîte la plus compacte possible et esthétiquememnt acceptable. Les plans de la boîte seront uploadés au plus vite et nous espérons 
