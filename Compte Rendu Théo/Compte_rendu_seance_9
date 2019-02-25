@@ -20,7 +20,7 @@ Travailler sur le rendu esthétique envoyé aux écrans :
   l'écran est décomposé en quatres cercles qui représentent chacun une partie du spectre. Le rayon du cercle dépend de l'amplitude maximale
   parmis les harmoniques de cette partie du spectre. Cette vision très simplifié du spectre nous aide à vérifier si la FFT réalisée uniquement
   via l'Arduino fonctionne correctement, car on élimine la plupart des parasites, importants via cette méthode. On observe ainsi quel cercle
-  a le plus grand rayon, pour déduire quelle partie du spectre détecte une sinusoide. Ex : voir l'image Affichage2.htm dans le même dossier
+  a le plus grand rayon, pour déduire quelle partie du spectre détecte une sinusoide. Ex : voir l'image Affichage2.pdf dans le même dossier
   
 Rectifier les plans de la boite :
 
