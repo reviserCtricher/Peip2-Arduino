@@ -1,0 +1,35 @@
+PICKE Théo                     Compte rendu de la séance du 11/02/18 
+
+
+
+Objectifs du groupe :    - Améliorer le rendu esthétique de ce qui est envoyé sur l'écran
+                         - Tester l'utilisation simultanée des deux écrans via les deux Arduinos
+
+Objectifs personnels :   - Travailler sur le rendu esthétique envoyé aux écrans
+                         - Rectifier les plans de la boite
+
+
+
+Travailler sur le rendu esthétique envoyé aux écrans :
+
+  Maintenant que nous avons réglé la plupart des objectifs du cahier des charges, il est temps de s'occuper du côté esthétique.
+  Pour cela, nous allons utiliser plusieurs versions des programmes spectrum.ino et affFFT.ino, en modifiant uniquement la partie
+  "affichage" du code. Ainsi, nous disposerons de plusieurs types d'affichages différents, et utiliserons au final celui qui a notre
+  préférence. Nous disposons tout d'abords de l'affichage obtenu lors de la séance précèdente, qui a besoin de quelques améliorations
+  concernant les bords, qui peuvent passer du rouge au bleu. Nous avons mis en place un nouveau type d'affichage pour spectrum.ino :
+  l'écran est décomposé en quatres cercles qui représentent chacun une partie du spectre. Le rayon du cercle dépend de l'amplitude maximale
+  parmis les harmoniques de cette partie du spectre. Cette vision très simplifié du spectre nous aide à vérifier si la FFT réalisée uniquement
+  via l'Arduino fonctionne correctement, car on élimine la plupart des parasites, importants via cette méthode. On observe ainsi quel cercle
+  a le plus grand rayon, pour déduire quelle partie du spectre détecte une sinusoide. Ex : voir l'image Affichage2.htm dans le même dossier
+  
+Rectifier les plans de la boite :
+
+  Après discussion avec d'autres élèves et s'être rendu au fablab, nous nous sommes rendus compte que les plans de la séance précèdente
+  étaient inutilisable, étant donné que la taille maximale d'une pièce pour la boite est un rectangle 61*30cm (nous avions besoins d'un
+  carré 32*32). Heureusement, de légères modifications nous permettront de construire un modèle très similaire. La réalisation est prévue
+  cette semaine. Les plans devraient être fournis la prochaine séance.
+  
+Conclusion:
+
+  Le projet semble sur la bonne voie. Les derniers détails devraient être réglés d'ici une semaine, ce qui nous laisse du temps utile pour
+  gérer les imprévus et mieux préparer la présentation du projet.
