@@ -10,8 +10,8 @@
 ### Responsable enseignant :
 - Pascal Masson 
 ## Sommaire 
-1. **Motivations** 
-   - Pourquoi ce projet ?
+1. [**Motivations**](motivations-:)  
+   - [Pourquoi ce projet](pourquoi-ce-projet) ?
    - A quoi ça sert ?
    - Comment ?
   
