@@ -5,8 +5,9 @@
 ## Application de la Transformée de Fourier à l'affichage pratique et esthétique de contenu audio
 
 ### Auteurs : 
-- [Decottignies Thomas](thomas.decottignies@etu.unice.fr)
+- Decottignies Thomas
 - Picke Théo
 ### Responsable enseignant :
 - Pascal Masson 
+
 
