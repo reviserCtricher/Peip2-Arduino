@@ -10,6 +10,7 @@
 ### Responsable enseignant :
 - Pascal Masson 
 ### Sommaire 
+'''
 1. Motivations 
    - Pourquoi ce projet ?
    - A quoi ça sert ?
@@ -29,6 +30,7 @@
    - Comparaison au cahier des charges
    - Améliorations possibles 
    - Ouverture à d'autres applications 
+'''
 
 
 
