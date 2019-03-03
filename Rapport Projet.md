@@ -9,26 +9,28 @@
 - Picke Théo
 ### Responsable enseignant :
 - Pascal Masson 
-### Sommaire 
-1. Motivations 
+## Sommaire 
+1. **Motivations** 
    - Pourquoi ce projet ?
    - A quoi ça sert ?
    - Comment ?
   
-2. Etablissement du cahier des charges 
+2. **Etablissement du cahier des charges** 
 
-3. Recherches 
+3. **Recherches** 
    - Etat de l'art
-   - Contributions
+   - Dans notre contexte
   
-4. Déroulement 
+4. **Déroulement **
    - Séance 1 
    - ...
   
-5. Rendu
+5. **Rendu**
    - Comparaison au cahier des charges
    - Améliorations possibles 
    - Ouverture à d'autres applications 
+   
+6. **Contributions et remerciements**
 
 
 
