@@ -9,8 +9,10 @@
 ### Auteurs : 
 - Decottignies Thomas
 - Picke Théo
+
 ### Responsable enseignant :
 - Pascal Masson 
+
 ## Sommaire 
 1. [**Motivations**](#motivations-)  
    - Pourquoi ce projet ?
@@ -51,6 +53,7 @@ Malgré la certaine liberté dont nous disposons, nous sommes tenus de respecter
 Il s'est passé deux semaines entre le moment où nous avons formé les binômes et fixé le sujet. Nous avions une multitude d'idées parmi lesquelles : ...  
 Toutefois nous avons rencontré un certain nombre de difficultés techniques qui semblaient compromettre une à une nos idées.
 La confirmation de notre projet nous est venue avant tout de nos interets respectifs. Comment concilier musique , probabilité et programmation ? En nous penchant sur les vastes capacités que nous offre arduino nous avons fini par nous accorer sur la création d'un afficheur de fréquence tel qu'on en trouve sur n'importe quel équaliseur en ayant une vague notion de ce qu'est la FFT (merci l'utilisation de l'osciloscope ). 
+
 ## A quoi ça sert ?
 
 ### Utilité au quotidien
@@ -59,12 +62,27 @@ Le premier exemple qui nous est venu , étant tous les deux musiciens est le fon
 ## Comment ?
 ### Les ressources
 Sans avoir étudié en détail les caractéristiques du système , nous savons qu'il nous faut un capteur pour l'acquisition du son (un simple micro fait l'affaire) , un boitier d'acquisition (l'Arduino) , un logiciel de traitement et enfin un écran .
+
 ### Le principe
 Le coeur du projet repose sur un opérateur qu'est la transformée de fourier rapide : ...
 Problématique : gourmande en ressources 
 
+# Etablissement du cahier des charges :
+## Découpage en fonctions
+...
 
+## Le matériel
+- Arduino mega 
+- Ecran led Adafruit Industries 32*64
+- Pc
+- Micro 
+- Puce BT HC-06
+...
 
+# Recherches:
+## L'etat de l'art
+
+## Dans notre contexte
 
 
 
