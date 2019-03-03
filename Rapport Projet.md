@@ -1,4 +1,5 @@
 ![Logo Polytech Nice-Sophia](/Images/logoEPU.png) 
+![Logo arduino](/Images/Arduino_logo_pantone.png)
 
 # Rapport projets Arduino 2018-2019
 
