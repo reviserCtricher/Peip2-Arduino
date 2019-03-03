@@ -1,11 +1,12 @@
 Decottignies Thomas
 Projet Arduino 2018/2019
 
-                                                     Compte rendu seance 8:
-Activites:
+# Compte rendu seance 8:
+
+## Activites:
 Modifications de l'affichage et création de fonctions permettant d'améliorer l'esthétique en utilisant le module de FFT fixe. 
 
-Detail: 
+## Detail: 
 Afin de tirer pleinement parti de nos avancées concernant la FFT à point fixe , nous avons commencé à nous pencher sur une meilleure 
 utilisation des possibilités d'affichage que nous offre l'ecran led. Nous avons apporté quelques modifications au programme "Spectrum" qui 
 ne consomme que trs peu deressources de l'arduino pour pratiquer la FFT et dispose donc d'une plus grande souplesse pour des fonctions 
@@ -21,4 +22,4 @@ en utilisant deux vesrions de notre programme sur deux arduino chargés de trait
 Les applications possibles sont infinies dans le sens où elles ne sont que des "skins" que l'on peut créer et appliquer en fonction des 
 goûts de l'utilisateur. Nous en dvelopperons d'autres à l'avenir . 
 
-https://photos.app.goo.gl/RF9F1LVxFgLvQxwt5
+[Quelques photos](https://photos.app.goo.gl/RF9F1LVxFgLvQxwt5)
