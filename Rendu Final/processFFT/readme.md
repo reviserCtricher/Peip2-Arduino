@@ -1,0 +1,1 @@
+Programme de traitement du signal sonore opéré par le logiciel processing . Les données à afficher sont transmises à l'Arduino sur lequel on doit avoir au préalable avoir compilé/éxecuté le fichier affFFt.ino . Les fichiers son à traiter doivent se trouver dans le même dossier.
