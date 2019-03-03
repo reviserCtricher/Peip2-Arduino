@@ -1,17 +1,3 @@
-/*
- * Arduino Spectrum Analizer
- * 
- * learnelectronics
- * 27 April 2017
- * black magic stolen from CBM80Amiga
- * 
- * www.youtube.com/c/learnelectronics
- * arduino1069@gmail.com
- * 
- * Fix_FFT library available @ https://github.com/kosme/arduinoFFT
- */
-
-
 #include "fix_fft.h"                                  //library to perfom the Fast Fourier Transform
 #include <RGBmatrixPanel.h> // Hardware-specific library
 
@@ -34,7 +20,7 @@ int i = 0, val;                                       //counters
 
 void setup()
 {
-  Serial.begin(9600);                                 //serial comms for debuging
+  Serial.begin(9600);                                 //serial comes for debuging
   Serial1.begin(57600);
   Serial3.begin(38400);
   matrix.begin();
@@ -63,8 +49,9 @@ void loop()
 
 
 
+// the following are versions of our display; just uncomment one and run the program
 
-/**
+  /**
   for(int i=0 ; i<2; i++){
     int maxi=0;
     for(int j=i*16+1 ; j<i*16+17 ; j++){
@@ -103,6 +90,7 @@ void loop()
 
   
   /**
+  
   for (i = 1; i < 64; i++) {                          // In the current design, 60Hz and noise
     int dat = sqrt(data[i] * data[i] + im[i] * im[i]);   //filter out noise and hum
     matrix.drawLine(i + x, ylim, i + x, ylim - 2*dat, matrix.Color333(0,0,7)); // draw bar graphics for freqs above 500Hz to buffer
