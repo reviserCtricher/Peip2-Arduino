@@ -39,7 +39,18 @@
 # Motivations :
 
 ## Pourquoi ce projet ?
-###La puce arduino :
+### La puce **Arduino** :
+capteur --> puce (traitement) --> action
+### Les contraintes :
+### L'idée :
+
+## A quoi ça sert ?
+### Utilité au quotidien
+### Intéret personnel
+
+## Comment ?
+### Les ressources
+### Le principe
 
 
 
