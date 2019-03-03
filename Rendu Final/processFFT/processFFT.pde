@@ -29,7 +29,7 @@ int spectrum_height = 176; // determines range of dB shown
 /**
  * Misc. settings
  */
-String serial_port = "COM13";
+String serial_port = "COM13"; //depending on your desktop (audio input)
 
 int baud_rate = 57600;
 boolean enable_32 = true;
@@ -46,8 +46,8 @@ float f;
 
 void setup() {
   size(200, 200);
-  minim = new Minim(this);
-  in = minim.loadFile("4u.mp3");
+  minim = new Minim(this); //create minim object
+  in = minim.loadFile("4u.mp3"); //load whatever file you want to process (must be in the same dir)
   in.loop();
 
   port = new Serial(this, serial_port, baud_rate); //set baud rate
@@ -97,7 +97,7 @@ void draw() {
     }
   }
 
-  // Amplitude Ranges: if else tree
+  // Amplitude Ranges: if else tree building array of frequences
   for (int j = 0; j < num_levels; j++) {
          if (freq_height[j] < 200000 && freq_height[j] > 200) { freq_array[j] = 16; }
     else if (freq_height[j] <= 300 && freq_height[j] > 150)   { freq_array[j] = 15; }
