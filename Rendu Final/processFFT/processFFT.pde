@@ -29,7 +29,7 @@ int spectrum_height = 176; // determines range of dB shown
 /**
  * Misc. settings
  */
-String serial_port = "COM13"; //depending on your desktop (audio input)
+String serial_port = "COM13"; //depending on your desktop (audio ouput)
 
 int baud_rate = 57600;
 boolean enable_32 = true;
