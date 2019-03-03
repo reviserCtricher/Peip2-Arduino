@@ -25,7 +25,7 @@ String sep = ":";
 
 void setup() {
   Serial.begin(57600);    //USB
-  Serial1.begin(57600);   //Ecran
+  Serial1.begin(57600);   //screen
   Serial3.begin(38400);   //BT
   matrix.begin();
   Serial.println("Starting");
