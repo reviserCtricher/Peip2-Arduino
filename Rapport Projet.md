@@ -18,12 +18,14 @@
    - Comment ?
   
 2. **Etablissement du cahier des charges** 
+   - Les fonctions
+   - Le materiel
 
 3. **Recherches** 
    - Etat de l'art
    - Dans notre contexte
   
-4. **Déroulement **
+4. **Déroulement**
    - Séance 1 
    - ...
   
@@ -37,6 +39,8 @@
 # Motivations :
 
 ## Pourquoi ce projet ?
+###La puce arduino :
+
 
 
 
