@@ -1,1 +1,1 @@
-Vous trouverez ici l'ensemble de des codes de notre projet
+Vous trouverez ici l'ensemble des codes de notre projet
