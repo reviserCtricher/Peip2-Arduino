@@ -16,7 +16,7 @@ d'affichage plus complexes. Pour le moment , nous avons développé deux nouveau
 se trouve dans la plage concernée par le cercle, le rayon de celui-ci varie en fonction de l'amplitude. Afin d'ameliorer les performances , 
 seul le maximum de chaque plage de fréquence est affiché. 
 
--Dans le second cas , nous avons conservé le principe du précédent mais avons choisi d'afficher les cercles sur deux écrans différents 
+- Dans le second cas , nous avons conservé le principe du précédent mais avons choisi d'afficher les cercles sur deux écrans différents 
 en utilisant deux vesrions de notre programme sur deux arduino chargés de traiter chacun une partie du spectre audible. 
 
 Les applications possibles sont infinies dans le sens où elles ne sont que des "skins" que l'on peut créer et appliquer en fonction des 
