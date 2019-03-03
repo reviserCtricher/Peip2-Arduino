@@ -41,7 +41,7 @@
 ## Pourquoi ce projet ?
 ### La puce **Arduino** :
 Dans le cadre du cours d'electronique avec Arduino , nous avons l'occasion de faire preuve de créativité dans un sujet libre utilisant les capacités que nous offre Arduino et ses composants . Une carte Arduino est une puce programmable possédant au minima des entrées/sorties numériques/analogiques et une prise USB. Elle fonctionne selon un principe simple : un signal reçu depuis une entrée déclenche une ou des actions. Il est possible d'y connecter une batterie d'appareils capable d'acquérir des données (capteurs) et de moyens permettants une action (led, moteurs etc...).
-Dans notre cas , nous simplifierons le fonctionnement de la carte Arduino selon le principe suivant:
+Dans notre cas , nous simplifierons le fonctionnement de la carte Arduino selon le principe suivant :
 > **Réception --> Traitement --> Action**
 
 ### Les contraintes :
