@@ -79,6 +79,11 @@ Le fonctionnement de la FFT nous pose toutefois un problème . Etant très gourm
 
 # Etablissement du cahier des charges :
 ## Découpage en fonctions
+Afin d'établir le cahier des charges (consultable [ici](/CDC.md)), nous avons choisi de découper notre projet en fonctions simples que nous tacherons de faire interagir par la suite :
+### 1. L'affihage :
+Afin d'afficher correctement les resultat de notre programme , il est essentiel de maitriser les possibilités d'affichage que nous offre l'ecran mis à notre disposition . Nous devons réfléchir à la fois à un affichage clair , intelligible et esthétique . Pour cela le tracer de formes géométriques , de droites et l'affichage de connées sur l'ecran constituent les elements de base de ce que sera l'affichage final.
+### 2. 
+
 
 
 ## Le matériel
