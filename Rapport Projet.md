@@ -23,15 +23,15 @@
    - Les fonctions
    - Le matériel
 
-3. [**Recherches**](#recherches) 
+3. [**Recherches**](#recherches-) 
    - Etat de l'art
    - Dans notre contexte
   
-4. [**Déroulement**](déroulement)
+4. [**Déroulement**](déroulement-)
    - Séance 1 
    - ...
   
-5. [**Rendu**](#rendu)
+5. [**Rendu**](#rendu-)
    - Comparaison au cahier des charges
    - Améliorations possibles 
    - Ouverture à d'autres applications 
