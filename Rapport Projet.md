@@ -93,7 +93,7 @@ Une grande partie du matériel necessaire à la réalisation de notre projet eta
 - [x] Une allimentation filaire
 - [x] Ecran led Adafruit Industries 32*64
 - [x] Un ordinateur portable
-- [x] Un micro 
+- [x] Un micro type ky-037
 - [x] Une puce BT HC-06
 
 Des elements mineurs à acheter : 
