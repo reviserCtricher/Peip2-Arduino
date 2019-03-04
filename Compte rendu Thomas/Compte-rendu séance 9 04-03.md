@@ -8,8 +8,9 @@ Decottignies Thomas Projet Arduino 2018/2019
 - Création des plans pour une nouvelle boite de transport du projet
 
 ## Détails : 
-- Après avoir établi le plan et la structure du rapport , nous avons entammé sa rédaction . L'avancement de celui-ci peut être trouvé [ici](/Rapport Projet.md). 
-- Nous avions déjà crée deux nouveaux skins (affichage sphérique et sphérique sur deux écrans simultanés)
+- Après avoir établi le plan et la structure du rapport , nous avons entammé sa rédaction . L'avancement de celui-ci peut être trouvé [ici](/Rapport%20Projet.md). 
+- Nous avions déjà crée deux nouveaux skins (affichage sphérique et sphérique sur deux écrans simultanés) , nous avons mis à disposition une troisième et dernière version de l'affichage qui affiche une ligne de points alternés qui changent de taille en fonction de la fréquence entendue. 
+> 
 
 
 
