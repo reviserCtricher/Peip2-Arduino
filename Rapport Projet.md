@@ -21,17 +21,17 @@
   
 2. [**Etablissement du cahier des charges**](#etablissement-du-cahier-des-charges-) 
    - Les fonctions
-   - Le materiel
+   - Le matériel
 
-3. **Recherches** 
+3. [**Recherches**](#recherches) 
    - Etat de l'art
    - Dans notre contexte
   
-4. **Déroulement**
+4. [**Déroulement**](déroulement)
    - Séance 1 
    - ...
   
-5. **Rendu**
+5. [**Rendu**](#rendu)
    - Comparaison au cahier des charges
    - Améliorations possibles 
    - Ouverture à d'autres applications 
@@ -101,12 +101,14 @@ Des elements mineurs à acheter :
 - [ ] De la colle à bois
 - [ ] Du scotch double face isolant
 
-# Recherches:
+# Recherches :
 ## L'etat de l'art
 
 ## Dans notre contexte
 
+# Déroulement :
 
+# Rendu :
 
 
 
