@@ -104,15 +104,16 @@ Une grande partie du matériel necessaire à la réalisation de notre projet eta
 ![Micro](/Images/kymic.jpg)
 
 - [x] Une puce BT HC-06
+
 ![BT](/Images/hc06.jpg)
 
-Des elements mineurs à acheter : 
+Des éléments mineurs à acheter : 
 - [ ] Une boite afin de contenir tous les élément de notre projet 
 - [ ] De la colle à bois
 - [ ] Du scotch double face isolant
 
 # Recherches :
-## L'etat de l'art
+## L'état de l'art
 
 ## Dans notre contexte
 
