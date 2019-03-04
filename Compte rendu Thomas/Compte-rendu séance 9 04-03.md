@@ -7,7 +7,7 @@ Decottignies Thomas Projet Arduino 2018/2019
 - Améliorations et création d'un skin pour le programme affFFT.ino de FFT par le PC
 - Création des plans pour une nouvelle boite de transport du projet
 
-## Détails :
-
+## Détails : 
+- Après avoir établi le plan et la structure du rapport , nous avons entammé sa rédaction . L'avancement de celui-ci peut être trouvé [ici](/Rendu Final)
 
 
