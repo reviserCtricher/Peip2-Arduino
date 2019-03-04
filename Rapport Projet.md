@@ -104,6 +104,7 @@ Une grande partie du matériel necessaire à la réalisation de notre projet eta
 ![Micro](/Images/kymic.jpg)
 
 - [x] Une puce BT HC-06
+![BT](/Images/hc06.jpg)
 
 Des elements mineurs à acheter : 
 - [ ] Une boite afin de contenir tous les élément de notre projet 
