@@ -90,13 +90,19 @@ Nous devons réaliser une FFT sur un signal provenant de différentes sources nu
 ## Le matériel
 Une grande partie du matériel necessaire à la réalisation de notre projet etait déjà à notre disposition parmi :
 - [x] Arduino mega 
+
 ![Arduino Mega](Images/mega.jpg)
+
 - [x] Une allimentation filaire
 - [x] Ecran led Adafruit Industries 32*64
+
 ![Ecran LED](/Images/ecran.jpg)
+
 - [x] Un ordinateur portable
 - [x] Un micro type ky-037
+
 ![Micro](/Images/kymic.jpg)
+
 - [x] Une puce BT HC-06
 
 Des elements mineurs à acheter : 
