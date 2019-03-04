@@ -84,17 +84,16 @@ Afin d'établir le cahier des charges (consultable [ici](/CDC.md)), nous avons c
 Afin d'afficher correctement les resultat de notre programme , il est essentiel de maitriser les possibilités d'affichage que nous offre l'ecran mis à notre disposition . Nous devons réfléchir à la fois à un affichage clair , intelligible et esthétique . Pour cela le tracer de formes géométriques , de droites et l'affichage de connées sur l'ecran constituent les elements de base de ce que sera l'affichage final.
 ### 2. Lacommunication radio-fréquence :
 Les différentes composantes de notre projet etant fixes , les connections utilisées auraient pu être réalisées de façcon filaire. Toutefois afin de respecter les contraites du cours , nous allons mettre en place un connexion Bluetooth dont nous avons étudié le fonctionnement auparavant . Cette connexion servira d'intermédiaire entre le traitement et l'affichage des données.
-
-
-
+### 3. Opérer une transformée de Fourier rapide sur lesignal d'entrée:
+Nous devons réaliser une FFT sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision dans un premier temps de réaliser une FFT sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard pour des raisons techniques . Nous avions un doute quant à la capacité d'un Arduino à effectuer seul cette FFT. 
 
 ## Le matériel
-- Arduino mega 
-- Ecran led Adafruit Industries 32*64
-- Pc
-- Micro 
-- Puce BT HC-06
-...
+- [x] Arduino mega 
+- [x] Ecran led Adafruit Industries 32*64
+- [x] Un ordinateur portable
+- [x] Un micro 
+- [x] Une puce BT HC-06
+- [ ] Une boite afin de contenor tous les élément de notre projet 
 
 # Recherches:
 ## L'etat de l'art
