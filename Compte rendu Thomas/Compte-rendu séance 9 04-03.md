@@ -1,9 +1,13 @@
 Decottignies Thomas Projet Arduino 2018/2019
 # Compte-rendu séance 9 :
+
 ## Activités : 
-- Avencement du rendu
+- Avancement du rapport final 
+- Création d'un nouveau skin pour le programme spectrum.ino de FFT via arduino
+- Améliorations et création d'un skin pour le programme affFFT.ino de FFT par le PC
+- Création des plans pour une nouvelle boite de transport du projet
+
+## Détails :
 
 
-
-## Détails
 
