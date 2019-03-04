@@ -80,9 +80,11 @@ Le fonctionnement de la FFT nous pose toutefois un problème . Etant très gourm
 # Etablissement du cahier des charges :
 ## Découpage en fonctions
 Afin d'établir le cahier des charges (consultable [ici](/CDC.md)), nous avons choisi de découper notre projet en fonctions simples que nous tacherons de faire interagir par la suite :
-### 1. L'affihage :
+### 1. L'affichage :
 Afin d'afficher correctement les resultat de notre programme , il est essentiel de maitriser les possibilités d'affichage que nous offre l'ecran mis à notre disposition . Nous devons réfléchir à la fois à un affichage clair , intelligible et esthétique . Pour cela le tracer de formes géométriques , de droites et l'affichage de connées sur l'ecran constituent les elements de base de ce que sera l'affichage final.
-### 2. 
+### 2. Lacommunication radio-fréquence :
+Les différentes composantes de notre projet etant fixes , les connections utilisées auraient pu être réalisées de façcon filaire. Toutefois afin de respecter les contraites du cours , nous allons mettre en place un connexion Bluetooth dont nous avons étudié le fonctionnement auparavant . Cette connexion servira d'intermédiaire entre le traitement et l'affichage des données.
+
 
 
 
