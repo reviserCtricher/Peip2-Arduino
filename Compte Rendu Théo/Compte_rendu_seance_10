@@ -1,0 +1,48 @@
+PICKE Théo                     Compte rendu de la séance du 4/03/18 
+
+
+
+
+
+
+
+Objectifs du groupe :    - Trouver d'autres méthodes pour changer le rendu final
+
+                         - Terminer la boite
+
+
+
+Objectifs personnels :   - Modifier l'affichage des méthodes précèdentes
+
+                         - Trouver de nouvelles méthodes d'affichage
+
+                         - Travailler sur la boite
+
+
+
+Modifier l'affichage des méthodes précèdentes :
+
+  L'affichage des méthodes précèdentes a été très légèrement modifié, et le sera encore. L'objectif est de rectifier quelques erreurs
+  déja repérées, et chaque méthode d'affichage a été commentée. Des mesures permettant de réduire la consommation de l'écran ou le temps
+  de calcul ont aussi été prises. Les progrès apportés concernent principalement le programme "spectrum.ino"
+  
+Trouver de nouvelles méthodes d'affichage :
+
+  Plusieurs nouvelles méthodes d'affichages ont été ajoutées :
+  
+  - pour le programme spectrum.ino, la méthode IV, dérivée des méthode II et III,  affiche sur un seul écran huit cercles dont le rayon est
+  égal au maximum de l'amplitude dans une partie du spectre donnée. Cette méthode a l'avantage de permettre de distinguer plus facilement
+  la zone où se situe le fondamental.
+  - pour le programme affFFT.ino, la méthode II, fonctionnant de la même façon que la méthode IV pour spectrum.ino, mais adaptée pour
+  la méthode utilisant processing. On peut ainsi à nouveau comparer les deux méthodes, avec peut-être un peu plus de succès.
+  - la méthode III (épileptiques s'abstenir), qui est une version dérivée de la méthode II pour affFFT.ino, n'a qu'un but purement esthétique.
+  
+  Il est possible de voir les méthodes sur les versions actualisées de affFFT.ino et spectrum.ino
+
+Travailler sur la boite :
+
+  Nous avons terminé la création des pièces nécessaire à l'assemblage pour la boite. La construction sera réalisée dans les prochains jours, et c'est la raison
+  pour laquelle ce compte-rendu sera un peu vide, faute de temps pour prendre des images.
+  
+Conclusion : Nous aurons très probablement terminé légèrement en avance le travail demandé. Ce projet se sera donc à peu près selon le cahier
+des charges conçu initialement, avec quelques difficultés évidemment.
