@@ -88,12 +88,18 @@ Les différentes composantes de notre projet etant fixes , les connections utili
 Nous devons réaliser une FFT sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision dans un premier temps de réaliser une FFT sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard pour des raisons techniques . Nous avions un doute quant à la capacité d'un Arduino à effectuer seul cette FFT. 
 
 ## Le matériel
+Une grande partie du matériel necessaire à la réalisation de notre projet etait déjà à notre disposition parmi :
 - [x] Arduino mega 
+- [x] Une allimentation filaire
 - [x] Ecran led Adafruit Industries 32*64
 - [x] Un ordinateur portable
 - [x] Un micro 
 - [x] Une puce BT HC-06
-- [ ] Une boite afin de contenor tous les élément de notre projet 
+
+Des elements mineurs à acheter : 
+- [ ] Une boite afin de contenir tous les élément de notre projet 
+- [ ] De la colle à bois
+- [ ] Du scotch double face isolant
 
 # Recherches:
 ## L'etat de l'art
