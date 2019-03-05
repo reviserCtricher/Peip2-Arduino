@@ -42,16 +42,16 @@
 
 ## Pourquoi ce projet ?
 ### La puce **Arduino** :
-Dans le cadre du cours d'electronique , nous avons l'occasion de faire preuve de créativité dans un sujet libre utilisant les capacités que nous offre Arduino et ses composants . Une carte Arduino est une puce programmable possédant au minima des entrées/sorties numériques/analogiques et une prise USB. Elle fonctionne selon un principe simple : un signal reçu depuis une entrée déclenche une ou des actions. Il est possible d'y connecter une batterie d'appareils capable d'acquérir des données (capteurs) et de moyens permettants une action (led, moteurs etc...). Nous ferons le long de ce projet l'abus de langage "l'Arduino" pour designer la puce Arduino , ce terme désignant en réalité l'écosystème Arduino. 
+Dans le cadre du cours d'électronique , nous avons eu l'occasion de faire preuve de créativité dans un sujet libre utilisant les capacités que nous offre Arduino et ses composants. Une carte Arduino est une puce programmable possédant au minima des entrées/sorties numériques/analogiques et une prise USB. Elle fonctionne selon un principe simple : un signal reçu depuis une entrée déclenche une ou des actions, définies dans un programme enregistrées dans la carte. Il est possible d'y connecter une batterie d'appareils capable d'acquérir des données (capteurs) et de moyens permettants à la puce d'intéragir avec le monde extérieur(led, moteurs etc...). Nous ferons le long de ce projet l'abus de langage "l'Arduino" pour designer la puce Arduino , ce terme désignant en réalité l'écosystème Arduino. 
 Dans notre cas , nous simplifierons le fonctionnement de l'Arduino selon le principe suivant :
 > **Réception --> Traitement --> Action**
 
 ### Les contraintes :
-Malgré la certaine liberté dont nous disposons, nous sommes tenus de respecter les contraintes suivantes :
+Malgrés la certaine liberté dont nous disposons, nous sommes tenus de respecter les contraintes suivantes :
 - La faisabilité : il s'agit évidemment de mettre en pratique et d'approfondir nos connaissances. Nous devons veiller à ne pas être trop ambitieux et rester conscient de ce qui relève de notre niveau de compétence .
 - Le coût : le budget de l'ecole n'etant pas illimité il faut veiller à ce que les sommes dépensées soient en commune mesure avec la nature du projet .
 - Le temps : nous disposons d'un semestre et demi pour mener le projet à son terme . Toutefois si des difficultés techniques sont rencontrées , il est possible de minimiser la pénalisation en faisant preuve de d'ingéniosité et en proposant des solutions .
-- L'utilisation d'une connexion radioferéquence est imposée.
+- L'utilisation d'une connexion radiofréquence est imposée (ex : Bluetooth).
 
 ### Idée et intérêts personnels :
 Il s'est passé deux semaines entre le moment où nous avons formé les binômes et fixé le sujet. Nous avions une multitude de projets possibles parmi lesquels : 
@@ -61,17 +61,17 @@ Il s'est passé deux semaines entre le moment où nous avons formé les binômes
 - Un trackpad laser pour PC
 
 Toutefois nous avons rencontré un certain nombre de difficultés techniques qui semblaient compromettre une à une nos idées.
-La confirmation de notre projet nous est venue avant tout de nos interets respectifs. Comment concilier musique , probabilité et programmation ? En nous penchant sur les vastes capacités que nous offre Arduino nous avons fini par nous accorder sur la création d'un afficheur de fréquence tel qu'on en trouve sur n'importe quel équaliseur , en ayant une vague notion de ce qu'est la transformée de Fourier (merci l'utilisation de l'osciloscope ).
+La confirmation de notre projet nous est venue avant tout de nos intérêts respectifs. Comment concilier musique, approche mathématique et programmation ? En nous penchant sur les vastes capacités que nous offre Arduino nous avons fini par nous accorder sur la création d'un afficheur de fréquence tel qu'on en trouve sur n'importe quel équaliseur , en ayant une vague notion de ce qu'est la transformation de Fourier (merci l'utilisation de l'osciloscope ).
 
 ## A quoi ça sert ?
 
 ### Utilité au quotidien
-Le premier exemple qui nous est venu , étant tous les deux musiciens est le fonctionnement d'un accordeur. Un son émis par l'instrument est capté par un micro (sonore ou à vibrations) , analysé en fréquences et un affichage de la fréquence actuelle constitue la note jouée. C'est le même principe lorsqu'il s'agit de rêgler l'équibrage des différentes enceintes d'un home cinéma par exemple. La mesure des différentes fréquences permet d'avoir une balance entre grave et aigus adaptés au type de divertissement. D'autres applications dans les sciences existent pour l'analyse de systèmes mécaniques.
+Le premier exemple qui nous est venu , étant tous les deux musiciens est le fonctionnement d'un accordeur. Un son émis par l'instrument est capté par un micro (sonore ou à vibrations) , analysé en fréquences et un affichage de la fréquence actuelle constitue la note jouée. C'est le même principe lorsqu'il s'agit de régler l'équilibrage des différentes enceintes d'un home cinéma par exemple. La mesure des différentes fréquences permet d'avoir une balance entre grave et aigus adaptés au type de divertissement. D'autres applications dans les sciences existent pour l'analyse de systèmes mécaniques.
 
 ## Comment ?
 ### Les ressources
 Sans avoir étudié en détail les caractéristiques du système , nous savons qu'il nous faut un capteur pour l'acquisition du son , un boitier d'acquisition , un logiciel de traitement et enfin un écran .
-Un lot d'écrans LED etait déjà à notre disposition en salle de TP ,nous avons donc décidé de les utiliser.
+Un lot d'écrans LED etait déjà à notre disposition en salle de TP, nous avons donc décidé de les utiliser.
 
 ### Le principe
 Le coeur du projet repose sur un opérateur qu'est la Transformation de Fourier Rapide (TFF) : il s'agit d'un algorithme de la Transformation de Fourier Discrète (TFD). La TFD est une méthode permettant de réaliser une transformée de Fourier pour un signal sur une durée finie que l'on échantillonne en fonction du temps. La transformation de Fourier rapide n'est qu'un algorithme de cette même transformation qui nécessite un nombre d'opérations beaucoup moins grands pour les grands échantillons. Cette méthode nous permet donc de réaliser les transformations plus rapidement.
@@ -79,13 +79,13 @@ Le fonctionnement de la FFT nous pose toutefois un problème . Etant très gourm
 
 # Etablissement du cahier des charges :
 ## Découpage en fonctions
-Afin d'établir le cahier des charges (consultable [ici](/CDC.md)), nous avons choisi de découper notre projet en fonctions simples que nous tacherons de faire interagir par la suite :
+Afin d'établir le cahier des charges (consultable [ici](/CDC.md)), nous avons choisi de découper notre projet en étapes simples que nous tâcherons de réaliser et mettre en relations entre elles par la suite :
 ### 1. L'affichage :
-Afin d'afficher correctement les resultat de notre programme , il est essentiel de maitriser les possibilités d'affichage que nous offre l'ecran mis à notre disposition . Nous devons réfléchir à la fois à un affichage clair , intelligible et esthétique . Pour cela le tracer de formes géométriques , de droites et l'affichage de connées sur l'ecran constituent les elements de base de ce que sera l'affichage final.
-### 2. Lacommunication radio-fréquence :
-Les différentes composantes de notre projet etant fixes , les connections utilisées auraient pu être réalisées de façcon filaire. Toutefois afin de respecter les contraites du cours , nous allons mettre en place un connexion Bluetooth dont nous avons étudié le fonctionnement auparavant . Cette connexion servira d'intermédiaire entre le traitement et l'affichage des données.
+Afin d'afficher correctement les résultats de notre programme , il est essentiel de maîtriser les possibilités d'affichage que nous offre l'écran mis à notre disposition . Nous devons réfléchir à la fois à un affichage clair , intelligible et esthétique . Pour cela le tracé de formes géométriques , de droites et l'affichage de données sur l'écran constituent des éléments de base à acquérir pour travailler sur le rendu final.
+### 2. La communication radio-fréquence :
+Les différentes composantes de notre projet étant fixes , les connections utilisées auraient pu être réalisées de façcon filiaire. Toutefois afin de respecter les contraintes du projet , nous allons mettre en place un connexion Bluetooth dont nous avons étudié le fonctionnement auparavant . Cette connexion servira d'intermédiaire entre le traitement et l'affichage des données.
 ### 3. Opérer une Transformation de Fourier Rapide sur le signal d'entrée:
-Nous devons réaliser une TFR sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision dans un premier temps de réaliser une FFT sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard pour des raisons techniques . Nous avions un doute quant à la capacité d'un Arduino à effectuer seul cette FFT. 
+Nous devons réaliser une TFR sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision de réaliser dans un premier temps une TFR sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard. En effet, nous avions un doute quant à la capacité d'un Arduino à effectuer la TFR assez rapidement. 
 
 ## Le matériel
 Une grande partie du matériel necessaire à la réalisation de notre projet etait déjà à notre disposition parmi :
