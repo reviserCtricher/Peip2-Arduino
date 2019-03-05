@@ -48,7 +48,7 @@ Dans notre cas , nous simplifierons le fonctionnement de l'Arduino selon le prin
 
 ### Les contraintes :
 Malgré la certaine liberté dont nous disposons, nous sommes tenus de respecter les contraintes suivantes :
-- La faisabilité : il s'agit évidemment de mettre en pratique et d'approfondir nos connaissances. Nous devons veiller à ne pas être trop ambitieux et rester conscient de ce qui relève de notre niveau de compétance .
+- La faisabilité : il s'agit évidemment de mettre en pratique et d'approfondir nos connaissances. Nous devons veiller à ne pas être trop ambitieux et rester conscient de ce qui relève de notre niveau de compétence .
 - Le coût : le budget de l'ecole n'etant pas illimité il faut veiller à ce que les sommes dépensées soient en commune mesure avec la nature du projet .
 - Le temps : nous disposons d'un semestre et demi pour mener le projet à son terme . Toutefois si des difficultés techniques sont rencontrées , il est possible de minimiser la pénalisation en faisant preuve de d'ingéniosité et en proposant des solutions .
 - L'utilisation d'une connexion radioferéquence est imposée.
@@ -74,8 +74,8 @@ Sans avoir étudié en détail les caractéristiques du système , nous savons q
 Un lot d'écrans LED etait déjà à notre disposition en salle de TP ,nous avons donc décidé de les utiliser.
 
 ### Le principe
-Le coeur du projet repose sur un opérateur qu'est la transformée de fourier rapide : ... Description Théo
-Le fonctionnement de la FFT nous pose toutefois un problème . Etant très gourmande en ressources , nous sommes conscients que la faible puissance de calcul de l'arduino peut être un frein à la réalisation d'un programme devant gerer à la fois l'affichage sur l'écran LCD et les calculs liés à la transformée. Nous avons dans un premier temps penséà l'utilisation d'un PC afin de déleguer les calculs à un processeur plus puissant. Nous avons également à disposition des cartes Arduino Mega et due.
+Le coeur du projet repose sur un opérateur qu'est la Transformation de Fourier Rapide (TFF) : il s'agit d'un algorithme de la Transformation de Fourier Discrète (TFD). La TFD est une méthode permettant de réaliser une transformée de Fourier pour un signal sur une durée finie que l'on échantillonne en fonction du temps. La transformation de Fourier rapide n'est qu'un algorithme de cette même transformation qui nécessite un nombre d'opérations beaucoup moins grands pour les grands échantillons. Cette méthode nous permet donc de réaliser les transformations plus rapidement.
+Le fonctionnement de la FFT nous pose toutefois un problème . Etant très gourmande en ressources , nous sommes conscients que la faible puissance de calcul de l'arduino peut être un frein à la réalisation d'un programme devant gérer à la fois l'affichage sur l'écran LCD et les calculs liés à la TFR. Nous avons dans un premier temps penséà l'utilisation d'un PC afin de déleguer les calculs à un processeur plus puissant. Nous avons également à disposition des cartes Arduino Mega et due.
 
 # Etablissement du cahier des charges :
 ## Découpage en fonctions
@@ -84,8 +84,8 @@ Afin d'établir le cahier des charges (consultable [ici](/CDC.md)), nous avons c
 Afin d'afficher correctement les resultat de notre programme , il est essentiel de maitriser les possibilités d'affichage que nous offre l'ecran mis à notre disposition . Nous devons réfléchir à la fois à un affichage clair , intelligible et esthétique . Pour cela le tracer de formes géométriques , de droites et l'affichage de connées sur l'ecran constituent les elements de base de ce que sera l'affichage final.
 ### 2. Lacommunication radio-fréquence :
 Les différentes composantes de notre projet etant fixes , les connections utilisées auraient pu être réalisées de façcon filaire. Toutefois afin de respecter les contraites du cours , nous allons mettre en place un connexion Bluetooth dont nous avons étudié le fonctionnement auparavant . Cette connexion servira d'intermédiaire entre le traitement et l'affichage des données.
-### 3. Opérer une transformée de Fourier rapide sur lesignal d'entrée:
-Nous devons réaliser une FFT sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision dans un premier temps de réaliser une FFT sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard pour des raisons techniques . Nous avions un doute quant à la capacité d'un Arduino à effectuer seul cette FFT. 
+### 3. Opérer une Transformation de Fourier Rapide sur le signal d'entrée:
+Nous devons réaliser une TFR sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision dans un premier temps de réaliser une FFT sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard pour des raisons techniques . Nous avions un doute quant à la capacité d'un Arduino à effectuer seul cette FFT. 
 
 ## Le matériel
 Une grande partie du matériel necessaire à la réalisation de notre projet etait déjà à notre disposition parmi :
