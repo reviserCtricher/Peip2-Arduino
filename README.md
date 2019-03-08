@@ -1,6 +1,6 @@
 # Peip2-Arduino
 
-Application de la **Transformée de Fourier** au traitement de signaux sonores via Arduino et à l'affichage pratique/esthétique sur écran LED.
+Application de la **Transformation de Fourier** au traitement de signaux sonores via Arduino et à l'affichage pratique/esthétique sur écran LED.
 
 Ce projet a été réalisé par *Decottignies Thomas* et *Picke Théo* dans le cadre du cours Arduino de PeiP2 de l'ecole Polytech Nice-Sophia.
 
