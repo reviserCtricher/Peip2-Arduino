@@ -5,6 +5,7 @@
 - Faisabilité et contexte 
 ### 2. Cahier des charges :
 - Les fonctions 
+- Fonctions + algo
 ## Le déroulement :
 - Branchements écran + BT (site adafruit CE)  (Thomas)
 - Recherches FFT (Théo) + CDC
