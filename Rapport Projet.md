@@ -28,8 +28,11 @@
    - Dans notre contexte
   
 4. [**Déroulement**](déroulement-)
-   - Séance 1 
-   - ...
+   - Se familiariser avec le matériel
+   - 1er Programme : TFR via Processing
+   - 2nd Programme : TFR via l'Arduino
+   - Problèmes rencontrés lors du projet
+   - Améliorations esthétiques
   
 5. [**Rendu**](#rendu-)
    - Comparaison au cahier des charges
@@ -114,10 +117,38 @@ Des éléments mineurs à acheter :
 
 # Recherches :
 ## L'état de l'art
+Pour la réalisation de notre projet, nous avons pu nous appuyer sur ce qui avait déjà été réalisé par le passé.
+### 1. Le montage
+Afin de relier l'écran à l'Arduino, il était nécessaire de réaliser un montage adapté. Heureusement, sur le site [Adafruit- Rentrer l'adresse internet], des indications précises pour tout type d'Arduino étaient présentes, nous avons donc pu terminer sans mal ce qui concernait le montage, qui représente seulement une partie mineure de notre projet. 
+### 2. Les programmes et librairies
+Après quelques recherches, nous nous sommes rendus compte que la TFR était un algorithme peu être trop complexe pour que nous puissons le faire par nous même dans le temps imposé. Nous allions donc avoir également besoin de librairies déja faites permettant de réaliser des TFR. Ces librairies étaient déja implémentées dans les IDE que nous utilisions. Nous allions également pouvoir les programmes informatiques utilisant ces librairies, à la condition de les modifier pour les adapter au contexte
 
 ## Dans notre contexte
+Je ne suis pas certain du sens à donner à cette partie pour le moment, je la met donc de côté en attendant.
 
 # Déroulement :
+(J'ai réutilisé peu ou prou les parties du diapos, elles m'ont l'air adaptées et en accord avec ce qu'on doit dire)
+## Se familiariser avec le matériel
+(Ici on fait une présentation exhaustive du matériel(références et propriétés techniques), et on parle de la partie montage, jusqu'à la séance 2 incluse)
+### 1. Séances 1 et 2 : définition du projet et prise en main
+### 2. Le matériel
+## 1er Programme : TFR via Processing
+(Ici on parle des séances 3 et 4 (TFR via Processing, Bluetooth), et on explique en détail le fonctionnement de la TFR via Processing)
+### 1. Séances 3 et 4 : Une première méthode pour réaliser une TFR
+### 2. Principe et montage
+### 3. processFFT.pde et affFFT.ino
+## 2nd Programme : TFR via l'Arduino
+(Ici on parle des séances 5 à 7, et on explique en détail le fonctionnement de la TFR via Arduino)
+### 1. Séances 5 à 7 : Une autre façon de réaliser un spectrophotomètre
+### 2. Principe et montage
+### 3. spectrum.ino
+## Problèmes rencontrés lors du projet
+(Pas besoin de détailler ici, même chose que sur le diapo avec peut être quelques détails en rab)
+## Améliorations esthétiques
+(séance 8 à 10, boite et améliorations esthétiques)
+### 1. Séance 8 à 10 : Améliorer les résultats
+### 2. Construction du support
+### 3. De nouveaux types d'affichages
 
 # Rendu :
 
