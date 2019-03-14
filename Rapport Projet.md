@@ -42,15 +42,15 @@
 
 ## Pourquoi ce projet ?
 ### La puce **Arduino** :
-Dans le cadre du cours d'électronique , nous avons eu l'occasion de faire preuve de créativité dans un sujet libre utilisant les capacités que nous offre Arduino et ses composants. Une carte Arduino est une puce programmable possédant au minima des entrées/sorties numériques/analogiques et une prise USB. Elle fonctionne selon un principe simple : un signal reçu depuis une entrée déclenche une ou des actions, définies dans un programme enregistré dans la carte. Il est possible d'y connecter une batterie d'appareils capables d'acquérir des données (capteurs) et de moyens permettants à la puce d'intéragir avec le monde extérieur(led, moteurs etc...). Nous ferons le long de ce projet l'abus de langage "l'Arduino" pour designer la puce Arduino , ce terme désignant en réalité l'écosystème Arduino. 
+Dans le cadre du cours d'électronique, nous avons eu l'occasion de faire preuve de créativité dans un sujet libre utilisant les capacités que nous offre Arduino et ses composants. Une carte Arduino est une puce programmable possédant au minima des entrées/sorties numériques/analogiques et une prise USB. Elle fonctionne selon un principe simple : un signal reçu depuis une entrée déclenche une ou des actions, définies dans un programme enregistré dans la carte. Il est possible d'y connecter une batterie d'appareils capables d'acquérir des données (capteurs) et de moyens permettants à la puce d'intéragir avec le monde extérieur(led, moteurs etc...). Nous ferons le long de ce projet l'abus de langage "l'Arduino" pour designer la puce Arduino, ce terme désignant en réalité l'écosystème Arduino. 
 Dans notre cas , nous simplifierons le fonctionnement de l'Arduino selon le principe suivant :
 > **Réception --> Traitement --> Action**
 
 ### Les contraintes :
 Malgrés la certaine liberté dont nous disposons, nous sommes tenus de respecter les contraintes suivantes :
-- La faisabilité : il s'agit évidemment de mettre en pratique et d'approfondir nos connaissances. Nous devons veiller à ne pas être trop ambitieux et rester conscient de ce qui relève de notre niveau de compétence .
-- Le coût : le budget de l'ecole n'etant pas illimité il faut veiller à ce que les sommes dépensées soient en commune mesure avec la nature du projet .
-- Le temps : nous disposons d'un semestre et demi pour mener le projet à son terme . Toutefois si des difficultés techniques sont rencontrées , il est possible de minimiser la pénalisation en faisant preuve de d'ingéniosité et en proposant des solutions .
+- La faisabilité : il s'agit évidemment de mettre en pratique et d'approfondir nos connaissances. Nous devons veiller à ne pas être trop ambitieux et rester conscient de ce qui relève de notre niveau de compétence.
+- Le coût : le budget de l'ecole n'etant pas illimité il faut veiller à ce que les sommes dépensées soient en commune mesure avec la nature du projet.
+- Le temps : nous disposons d'un semestre et demi pour mener le projet à son terme. Toutefois si des difficultés techniques sont rencontrées, il est possible de minimiser la pénalisation en faisant preuve de d'ingéniosité et en proposant des solutions.
 - L'utilisation d'une connexion radiofréquence est imposée (ex : Bluetooth).
 
 ### Idée et intérêts personnels :
