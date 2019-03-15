@@ -222,7 +222,8 @@ L'Arduino récupère les informations envoyées par processing en Bluetooth sur 
     int f = in.substring(0, in.indexOf(sep)).toInt();  //stands for the first part of the data (before ":") frequency 
     int ff = in.substring(in.indexOf(sep) + sep.length()).toInt(); //stands for the second part of data : range 
 ```
-Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel bleu
+Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel noir si la valeur précédente n'est plus attribuée, bleu s'il s'agit d'une nouvelle valeur , jaune si elle dépasse un certain seuil. 
+
 ## 2nd Programme : TFR via l'Arduino
 (Ici on parle des séances 5 à 7, et on explique en détail le fonctionnement de la TFR via Arduino)
 ### 1. Séances 5 à 7 : Une autre façon de réaliser un spectrophotomètre
