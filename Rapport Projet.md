@@ -254,8 +254,30 @@ Nous avons rencontré une série de problèmes qui ont retardé notre avancée. 
 (séance 8 à 10, boite et améliorations esthétiques)
 ### 1. Séance 8 à 10 : Améliorer les résultats
 ### 2. Construction du support
-![Boite](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf)
+[Boite](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf)
 ### 3. De nouveaux types d'affichages
+Une fois les différentes méthodes pour réaliser la FFT terminée, nous avons suivi notre cahier des charges en décidant de créer de nouveaux types d'affichages et d'améliorer ceux déja existants. Pour cela, nous avons commencé par créer un nouveau type d'affichage pour [spectrum.ino](/Rendu%20Final/spectrum).
+Cette méthode d'affichage vise à limiter l'impact visuel du bruit, et augmenter la visibilité des signaux que nous arrivions à capter en branchant directement l'Arduino à un GBF. Il existe plusieurs versions de ce programme, ou on fait varier le nombre de cercles et ou affiche le résultat sur deux écrans, mais le principe est semblable. Elle récupère un certain nombre d'échantillons, et récupère le maximum d'amplitude parmis les valeurs de l'échantillon. Elle affiche le résultat sont forme d'un cercle par échantillon de fréquence dont le rayon varie en fonction du maximum obtenu. Lorsque ce maximum dépasse un seuil, le cercle devient en partie jaune :
+vidéo disponible [ici](https://youtu.be/8QeODw8Q2Pk)
+``` for(int i=0 ; i<8; i++){
+    int maxi=0;
+    for(int j=i*4+1 ; j<i*4+5 ; j++){ // même chose pour j
+      int dat = sqrt(data[j] * data[j] + im[j] * im[j]);
+      if(dat>maxi){maxi=dat;}
+    }
+     if(maxi>7){
+        matrix.fillCircle(i*7+8 , (i%2)*12+10 , maxi/5 , matrix.Color333(0 , 0 ,7)); // Le cercle sera affiché dans la moitié
+        matrix.fillCircle(i*7+8 , (i%2)*12+10 , 2 , matrix.Color333(0 , 7 ,0)); // supérieure de l'écran une fois sur deux,
+      }
+      else{
+        matrix.fillCircle(i*7+8 , (i%2)*12+10 , maxi/5 , matrix.Color333(0 , 7 ,0)); // sinon il sera affiché dans la moitié inférieure
+      }
+} 
+```
+Une fois cette version réalisée, nous avons décidé d'en créer une semblable pour Processing. Il a fallu modifier le programme, car Processing ne traite pas les informations ni de la même façon ni dans le même ordre. Le principe d'affichage reste le même, mais la vitesse de traitement est plus élevée.
+Vidéo disponible [ici](https://youtu.be/0CFA_ttialM)
+Enfin, nous avons créé une dernière version pour processFFT.pde à but purement esthétique. Attention, épileptiques s'abstenir ! 
+Vidéo disponible [ici](https://youtu.be/8qS_j6wB5zk)
 
 # Rendu :
 
