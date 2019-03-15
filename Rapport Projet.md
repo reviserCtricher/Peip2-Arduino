@@ -184,8 +184,31 @@ La source du signal audio est un objet de tye Minim dont nous signalons avant de
 Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemet est quasi instantanné et peut être visionné [ici](https://youtu.be/rAYWvyrwPwg).
 
 ### 2. Principe :
+Cette méthode repose sur l'utilisation de deux programmes qui fonctionnent de concert :
+- [processFFT.pde](/Rendu%20Final/processFFT): 
+Le programme récupère en entrée un fichier mp3 et le convertit en objet minim. La FFT est effectué sur l'objet et nous récupérons un couple de valeurs fréquence et amplitude . Les fréquences sont triées et adaptées à la dimension des sections que nous imposons (il est difficile de représenter sur un écran de longueur 64 pix une plage de fréquence de 20hz à 20Khz). Après avoir fait une moyenne des valeurs obtenues sur chaque plages , nous initialisons un tableau contenant toutes les valeurs possibles :
 
-### 3. processFFT.pde et affFFT.ino
+>for (int j = 0; j < num_levels; j++) {
+         if (freq_height[j] < 200000 && freq_height[j] > 200) { freq_array[j] = 16; }
+    else if (freq_height[j] <= 300 && freq_height[j] > 150)   { freq_array[j] = 15; }
+    else if (freq_height[j] <= 250 && freq_height[j] > 125)   { freq_array[j] = 14; }
+    else if (freq_height[j] <= 200 && freq_height[j] > 100)   { freq_array[j] = 13; }
+    else if (freq_height[j] <= 160 && freq_height[j] > 90)    { freq_array[j] = 12; }
+    else if (freq_height[j] <= 150 && freq_height[j] > 75)    { freq_array[j] = 11; }
+    else if (freq_height[j] <= 140 && freq_height[j] > 65)    { freq_array[j] = 10; }
+    else if (freq_height[j] <= 120 && freq_height[j] > 50)    { freq_array[j] = 9; }
+    else if (freq_height[j] <= 50 && freq_height[j] > 45)     { freq_array[j] = 8; }
+    else if (freq_height[j] <= 45 && freq_height[j] > 40)     { freq_array[j] = 7; }
+    else if (freq_height[j] <= 40 && freq_height[j] > 35)     { freq_array[j] = 6; }
+    else if (freq_height[j] <= 35 && freq_height[j] > 30)     { freq_array[j] = 5; }
+    else if (freq_height[j] <= 30 && freq_height[j] > 15)     { freq_array[j] = 4; }
+    else if (freq_height[j] <= 15 && freq_height[j] > 10)     { freq_array[j] = 3; }
+    else if (freq_height[j] <= 10 && freq_height[j] > 5)      { freq_array[j] = 2; }
+    else if (freq_height[j] <= 5 && freq_height[j] >= 1)      { freq_array[j] = 1; }
+    else if (freq_height[j] < 1 )                             { freq_array[j] = 0; }
+}
+
+- [affFFT.ino](/Rendu%20Final/affFFT)
 ## 2nd Programme : TFR via l'Arduino
 (Ici on parle des séances 5 à 7, et on explique en détail le fonctionnement de la TFR via Arduino)
 ### 1. Séances 5 à 7 : Une autre façon de réaliser un spectrophotomètre
