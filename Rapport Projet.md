@@ -134,9 +134,17 @@ L'arduino possède un cadre d'application "type", une donnée à traiter déclen
 Notre professeur encadrant, en sachant le thème que nous avions choisi, a mis à notre disposition un écran LED 64X32 Pix de marque Adafruit ainsi que l'alimentation correspondante. Pour la carte Arduino nous avons utilisé une carte MEGA 2560 possédant un plus grand nombre de ports et nous permettant d'anticiper un éventuel déficit de puissance de traitement. En recherchant la documentation liée à l'écran, nous sommes tombés sur le site officiel d'Adafruit Industries qui met en lien dans la description du produit une notice de branchement ainsi qu'un lien vers des exemples de programmes utilisant leur librairie. Les branchements détaillés sur [cette page](https://learn.adafruit.com/32x16-32x32-rgb-led-matrix/connecting-with-jumper-wires) nous ont permis d'éxecuter nos premiers affichages. Cet écran pour fonctionner nécessite deux librairies :
 1. [RGB Matrix pannel library](https://github.com/adafruit/RGB-matrix-Panel)
 2. [Adafruit GFX Library](https://github.com/adafruit/Adafruit-GFX-Library)
-
 Une fois ces deux librairies installées sur l'IDE Arduino, des fichiers tests étaient présents fans la section "exemples" de l'IDE et nous avons pu appréhender les premières fonctions que nous offrent l'écran, parmis lesquelles: 
-- 
+- color = matrix.color333(R,V,B) : renvoie une couleur formée par synthèse additive des trois composantes rouge vert bleu .
+- matrix.drawPixel(x, y, color) : dessine un Pixel en (x,y) .
+- matrix.fillRect(x, y, L, l, color) : dessine un rectangle plein en (x,y) de longueur L et de hauteur l.
+- matrix.drawRect(x, y, L, l, color) : dessine un rectangle vide en (x,y) de longueur L et de hauteur l.
+- matrix.drawLine(x1, y1, x2, y2, color) : dessine une ligne entre les points (x1,y1) et (x2,y2).
+- matrix.drawCircle(x, y, R, color) : dessine une cercle de centre (x,y) er de rayon R.
+- matrix.fillCircle(x, y, R, color) : dessine un disque de centre (x,y) et de rayon R.
+- matrix.fillScreen(color) : remplit l'écran de la couleur color (réinitialise l'écran si la couleur est noire).
+Notre premier programme test de l'écran fut un magniique sapin de noël dont l'étoile à son sommet clignotte .
+![testSapin](Images/testSapin.jpg)
 
 ### 2. Le matériel
 ## 1er Programme : TFR via Processing
