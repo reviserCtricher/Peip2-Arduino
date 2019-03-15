@@ -225,12 +225,32 @@ L'Arduino récupère les informations envoyées par processing en Bluetooth sur 
 Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel noir si la valeur précédente n'est plus attribuée, bleu s'il s'agit d'une nouvelle valeur , jaune si elle dépasse un certain seuil. 
 
 ## 2nd Programme : TFR via l'Arduino
-(Ici on parle des séances 5 à 7, et on explique en détail le fonctionnement de la TFR via Arduino)
-### 1. Séances 5 à 7 : Une autre façon de réaliser un spectrophotomètre
-### 2. Principe et montage
+
+### 1. Nouvelle librairie, nouveau concept :
+A ce stade , la première version utilisant un PC est proche de la complétion . ormis quelques détails esthétiques , nous décidons de s'attaquer à un tout autre problème : réaliser la TFR en n'utilisant que la puissance de traitement de l'Arduino. C'etait pour nous le seul véritabkle challenge étant donné que pléthore de méthodes de FFT existaient déja sur le web mais aucune n'etait restreinte aux capacités seules de l'arduino. C'est alors que nous avons découvert une nouvelle librairie [fft.h](https://github.com/kosme/arduinoFFT) de traitement dit "à points fixes". Mois gourmande en opérations élémentaires et implémentées dans l'IDE Arduino , cette méthode avait des avantages suffisants pour commencer une nouvelle version de notre projet.
+### 2. Principe :
+La TFR à points fixes fonctionne sur le principe suivant : Un sample du signal envoyé en entrée est capturé, il est analysé en moyenne sur cet intervalle de temps et un unique couple de valeurs fréquence:amplitude est récupéré. Bien moins précise, cette méthode permet néanmoins de contourner les limites techniques de la carte méga et ses 16Mhz de vitesse de calcul. 
+
 ### 3. spectrum.ino
-## Problèmes rencontrés lors du projet
-(Pas besoin de détailler ici, même chose que sur le diapo avec peut être quelques détails en rab)
+
+L'Arduino prend en entrée un signal analogique depuis la PIN 8, et capture un échantillon de taille 128
+ ```
+  int min=1024, max=0;                                //set minumum & maximum ADC value
+  for (i = 0; i < 128; i++) {                         //take 128 samples
+    val = analogRead(A8)*50 ;                             //get audio from Analog serial 
+    Serial.println(val , DEC);
+    data[i] = val / 4 - 128;                          //each element of array is val/4-128
+    im[i] = 0;                                        //
+    if(val>max) max=val;                              //capture maximum level
+    if(val<min) min=val;                              //capture minimum level
+   ```
+L'Arduino effectue ensuite la FFT sur l'échantillon récupéré précèdement, et affiche son résultat en différé.
+   ``` fix_fft(data, im, 7, 0); //perform the FFT on data ```
+Le nombre de fois ou l'Arduino peut effectuer cette opération par seconde est proportionnelle à la vitesse de son proceseur. 
+   
+Le programme affiche ensuite le résultat sous forme de lignes bleues via la fonction matrix.drawLine.
+Nous avons rencontré une série de problèmes qui ont retardé notre avancée. Ene effet , le microphone qui nous a été fourni présentait un défaut et pas des moindres , il ne laissait pas passer le courant et fonctionnait comme interrupteur ouvert. Le problème c'est que nous ne pouvions pas détecter si notre programme etait en cause ou le micro que nous n'avions pas suspecté. Après un test simple en mettant le micro en série avec une LED , nos avons cstaté son disfonctionnement et l'avons remplacé. Second problème , le gain de sortie du micro est extrêmement faible . N'etant pas équipé d'un amplificateur de qualité , nous avons eu recours à une manipulatin logicielle qui consiste à multiplier l'entrée analogique par une constante élevée (x50), multipliant au passage le bruit du micro et donc en sacrifiant encore en précision. 
+
 ## Améliorations esthétiques
 (séance 8 à 10, boite et améliorations esthétiques)
 ### 1. Séance 8 à 10 : Améliorer les résultats
