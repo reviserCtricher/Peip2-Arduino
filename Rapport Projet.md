@@ -81,6 +81,8 @@ Un lot d'écrans LED etait déjà à notre disposition en salle de TP, nous avon
 Le coeur du projet repose sur un opérateur qu'est la Transformation de Fourier Rapide (TFF) : il s'agit d'un algorithme de la Transformation de Fourier Discrète (TFD). La TFD est une méthode permettant de réaliser une transformée de Fourier pour un signal sur une durée finie que l'on échantillonne en fonction du temps. La transformation de Fourier rapide n'est qu'un algorithme de cette même transformation qui nécessite un nombre d'opérations beaucoup moindre pour les grands échantillons. Cette méthode nous permet donc de réaliser les transformations de Fourier Discrètes plus rapidement.
 Le fonctionnement de la FFT nous pose toutefois un problème. Etant très gourmande en ressources, nous sommes conscients que la faible puissance de calcul de l'arduino peut être un frein à la réalisation d'un programme devant gérer à la fois l'affichage sur l'écran LCD et les calculs liés à la TFR. Nous avons dans un premier temps pensé à l'utilisation d'un PC afin de déléguer les calculs à un processeur plus puissant. Nous avons également à disposition des cartes Arduino Mega et Due, qui devraient en théorie être assez puissante pour réaliser des TFR sommaires.
 
+![algo.png](/Images/algo.png)
+
 # Etablissement du cahier des charges :
 ## Découpage en fonctions
 Afin de rédiger le cahier des charges (consultable [ici](/CDC.md)), nous avons choisi de découper notre projet en étapes simples que nous tâcherons de réaliser et mettre en relations entre elles par la suite :
@@ -163,9 +165,10 @@ Etant donné que nous utilisions notre unique téléphone avec lapplication , no
 
 Maintenant que nous avons pris en main toutes les fonctions principales de notre projet , nous pouvons nous attaquer à la TFR.
 
-## 1er Programme : TFR via Processing
+## TFR via Processing
 (Ici on parle des séances 3 et 4 (TFR via Processing, Bluetooth), et on explique en détail le fonctionnement de la TFR via Processing)
 ### 1. Une première méthode pour réaliser une TFR
+
 Après avoir testé plusieurs librairies Arduino pour éxecuter la TFR, nous avons choisi d'utiliser le logiciel Processing sur PC et de revenir a un traitement FFT via arduino plus tard. Toutes les méthodes que nous avons trouvés utlisaient un PC pour le partie traitement, avant d'envoyer le résultat à l'Arduino.
 Notre premier essai d'affichage des fréquences utilise la librairie [Minim](http://code.compartmental.net/tools/minim/) de Processing qui permet la lecture de fichiers audios et dispose d'outils de traitement du signal. Dans cette première version Processing "découpe" le signal en fréquences et utilise l'intensité obtenue pour définir la taille des pics à dessiner. Pour se faire nous avons créé une matrice(Array) avec l'ensemble des valeurs à afficher.
 Une fois le traitement effectué, les informations sont envoyées à l'Arduino qui dessine (methode draw) les pics. 
@@ -178,13 +181,10 @@ La source du signal audio est un objet de tye Minim dont nous signalons avant de
 
 > in = minim.loadFile("centipede.mp3"); //set the minim source from the file (must be an mp3 in the same directory)
 
-Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemet est quasi instantanné et peut être visionné ![ici](https://youtu.be/rAYWvyrwPwg)
+Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemet est quasi instantanné et peut être visionné [ici](https://youtu.be/rAYWvyrwPwg).
 
+### 2. Principe :
 
-
-
-
-### 2. Principe et montage
 ### 3. processFFT.pde et affFFT.ino
 ## 2nd Programme : TFR via l'Arduino
 (Ici on parle des séances 5 à 7, et on explique en détail le fonctionnement de la TFR via Arduino)
