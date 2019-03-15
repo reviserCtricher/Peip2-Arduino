@@ -244,9 +244,8 @@ L'Arduino prend en entrée un signal analogique depuis la PIN 8, et capture un �
     if(val>max) max=val;                              //capture maximum level
     if(val<min) min=val;                              //capture minimum level
    ```
-L'Arduino effectue ensuite la FFT sur l'échantillon récupéré précèdement, et affiche son résultat en différé.
-   ``` fix_fft(data, im, 7, 0); //perform the FFT on data ```
-Le nombre de fois ou l'Arduino peut effectuer cette opération par seconde est proportionnelle à la vitesse de son proceseur. 
+L'Arduino effectue ensuite la FFT sur l'échantillon récupéré précédement, et affiche son résultat en différé.
+Le nombre de fois ou l'Arduino peut effectuer cette opération par seconde est proportionnelle à la vitesse de son proceseur.
    
 Le programme affiche ensuite le résultat sous forme de lignes bleues via la fonction matrix.drawLine.
 Nous avons rencontré une série de problèmes qui ont retardé notre avancée. Ene effet , le microphone qui nous a été fourni présentait un défaut et pas des moindres , il ne laissait pas passer le courant et fonctionnait comme interrupteur ouvert. Le problème c'est que nous ne pouvions pas détecter si notre programme etait en cause ou le micro que nous n'avions pas suspecté. Après un test simple en mettant le micro en série avec une LED , nos avons cstaté son disfonctionnement et l'avons remplacé. Second problème , le gain de sortie du micro est extrêmement faible . N'etant pas équipé d'un amplificateur de qualité , nous avons eu recours à une manipulatin logicielle qui consiste à multiplier l'entrée analogique par une constante élevée (x50), multipliant au passage le bruit du micro et donc en sacrifiant encore en précision. 
@@ -255,11 +254,12 @@ Nous avons rencontré une série de problèmes qui ont retardé notre avancée. 
 (séance 8 à 10, boite et améliorations esthétiques)
 ### 1. Séance 8 à 10 : Améliorer les résultats
 ### 2. Construction du support
+![Boite](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf)
 ### 3. De nouveaux types d'affichages
 
 # Rendu :
 
-
+C'est pour cela que nous avons envisagé d'utiliser une carte arduino Due. Nous sommes toutefois restés sur notre carte d'origine car le processeur ARM de la carte due n'est pas compatible avec la librairie fft.h.
 
 
 
