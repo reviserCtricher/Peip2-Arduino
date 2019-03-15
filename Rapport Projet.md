@@ -151,11 +151,11 @@ Notre premier programme test de l'écran fut un magnifique sapin de noël dont l
 
 ![testSapin](Images/testSapin.jpg)
 
-   Par la suite, nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT). Nous avons au passage découvert les ports communication de la carte MEGA qui ne figuraient pas sur notre modèle d'apprentissage. Ces ports nous permettent principalement d'éviter d'avoir à déclarer des variables pour les branchements des RX et TX de l'arduino et de simplement l'utiliser comme un port communication (ici com3 par exemple). Pour tester la connexions BT en même temps que nos capacités d'affichage en temps réel sur l'écran, nous avons choisi d'afficher un cercle dont nous faisions varier en temps réel le rayon sur un téléphone avec l'application [Bluetooth Electronics](http://www.keuwl.com/apps/bluetoothelectronics/). Le programme nommé [led32X64.ino](/Rendu%20Final/led34X64) nous a donné une information capitale sur les caractéristiques que nous attendions du Bluetooth dans ce projet : la rapidité. En effet lors des premiers tests de variation du rayon du cercle, nous avons remarqué une lattence importante. Une modification de la vitesse de communication du BT à l'aide du programme cité précédemment et de la commande :
+   Par la suite, nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT). Nous avions au passage découvert les ports communication de la carte MEGA qui ne figuraient pas sur notre modèle d'apprentissage. Ces ports nous permettent principalement d'éviter d'avoir à déclarer des variables pour les branchements des RX et TX de l'arduino et de l'utiliser comme un port communication (ici com3 par exemple). Pour tester la connexions BT en même temps que nos capacités d'affichage en temps réel sur l'écran, nous avions choisi d'afficher un cercle dont nous faisions varier en temps réel le rayon sur un téléphone avec l'application [Bluetooth Electronics](http://www.keuwl.com/apps/bluetoothelectronics/). Le programme nommé [led32X64.ino](/Rendu%20Final/led34X64) nous a donné une information capitale sur les caractéristiques que nous attendions du Bluetooth dans ce projet : la rapidité. En effet lors des premiers tests de variation du rayon du cercle, nous avions remarqué une lattence importante. Une modification de la vitesse de communication du BT à l'aide du programme cité précédemment et de la commande :
 
 > AT+BAUD6 (à écrire dans le moniteur série)
 
-nous a permis d'augmenter la vitesse de communication du HC-06 à 38400. Nous avons également augmenté la vitesse de communication côté écran :
+nous a permis d'augmenter la vitesse de communication du HC-06 à 38400. Nous avions également augmenté la vitesse de communication côté écran :
 
 ` serial3.begin(38400); `
 
@@ -166,25 +166,25 @@ Maintenant que nous avions pris en main toutes les fonctions principales de notr
 ## TFR via Processing
 ### 1. Une première méthode pour réaliser une TFR
 
-   Après avoir testé plusieurs librairies Arduino pour éxecuter la TFR, nous avons choisi d'utiliser le logiciel Processing sur PC et de revenir a un traitement FFT via arduino plus tard. Toutes les méthodes que nous avons trouvés utlisaient un PC pour le partie traitement, avant d'envoyer le résultat à l'Arduino.
+   Après avoir testé plusieurs librairies Arduino pour éxecuter la TFR, nous avions choisi d'utiliser le logiciel Processing sur PC et de revenir a un traitement FFT via arduino plus tard. Toutes les méthodes que nous avons trouvés utlisaient un PC pour le partie traitement, avant d'envoyer le résultat à l'Arduino.
    Notre premier essai d'affichage des fréquences utilise la librairie [Minim](http://code.compartmental.net/tools/minim/) de Processing qui permet la lecture de fichiers audios et dispose d'outils de traitement du signal. Dans cette première version Processing "découpe" le signal en fréquences et utilise l'intensité obtenue pour définir la taille des pics à dessiner. Pour se faire nous avons créé une matrice(Array) avec l'ensemble des valeurs à afficher.
    Une fois le traitement effectué, les informations sont envoyées à l'Arduino qui dessine (methode draw) les pics. 
-Nous nous sommes en grande partie inspirés des travaux du Github [Afreiday](https://github.com/afreiday) dont la plus grosse modification à effectuer était de lire un fichier audio plutot qu'une sortie d'une carte son par exemple.
-   Pour l'instant la connection est filaire mais nous avons déjà préparé un module bluetooth par lequel transitera l'information. La communication sans fil repose sur la possibilité qu'offre windows 10 de selectionner et éditer les Ports sur lesquels se connectent les périphériques. Après une première connection , tout périphérique se voit attribuer un numéro COM et est enregistré. Par la suite nous avons utilisé ce numéro pour se connecter à l'arduino et lui envoyer les données traitées :
+Nous nous sommes en grande partie inspirés des travaux du Github [Afreiday](https://github.com/afreiday) , et la plus grosse modification à effectuer était de lire un fichier audio plutot qu'une sortie d'une carte son par exemple.
+   Pour l'instant la connection est filaire mais nous avons déjà préparé un module bluetooth par lequel transitera l'information. La communication sans fil repose sur la possibilité qu'offre windows 10 de sélectionner et éditer les Ports sur lesquels se connectent les périphériques. Après une première connection , tout périphérique se voit attribuer un numéro COM et est enregistré. Par la suite nous avons utilisé ce numéro pour se connecter à l'Arduino et lui envoyer les données traitées :
 
 `String serial_port = "COM13"; //set the out port to send data from the FFT (uses Bluetooth port from windows configuration pannel)`
 
-La source du signal audio est un objet de tye Minim dont nous signalons avant de compiler et executer le programme la source :
+La source du signal audio est un objet de tye Minim dont nous signalons avant de compiler et d'éxecuter le programme la source :
 
 ` in = minim.loadFile("centipede.mp3"); //set the minim source from the file (must be an mp3 in the same directory) `
 
-Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemnet est quasi instantanné et peut être visionné [ici](https://youtu.be/rAYWvyrwPwg).
+   Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitement est quasi instantané et peut être visionné [ici](https://youtu.be/rAYWvyrwPwg).
 
 ### 2. Principe :
 
-Cette méthode repose sur l'utilisation de deux programmes qui fonctionnent de concert :
+   Cette méthode repose sur l'utilisation de deux programmes qui fonctionnent de concert :
 - [processFFT.pde](/Rendu%20Final/processFFT): 
-Le programme récupère en entrée un fichier mp3 et le convertit en objet minim. La FFT est effectué sur l'objet et nous récupérons un couple de valeurs fréquence et amplitude . Les fréquences sont triées et adaptées à la dimension des sections que nous imposons (il est difficile de représenter sur un écran de longueur 64 pix une plage de fréquence de 20hz à 20Khz). Après avoir fait une moyenne des valeurs obtenues sur chaque plages , nous initialisons un tableau contenant toutes les valeurs possibles :
+   Le programme récupère en entrée un fichier mp3 et le convertit en objet minim. La FFT est effectué sur l'objet et nous récupérons un couple de valeurs fréquence et amplitude . Les fréquences sont triées et adaptées à la dimension des sections que nous imposons (il est difficile de représenter sur un écran de longueur 64 pix une plage de fréquence de 20hz à 20Khz). Après avoir fait une moyenne des valeurs obtenues sur chaque plages , nous initialisons un tableau contenant toutes les valeurs possibles :
 ```
 for (int j = 0; j < num_levels; j++) {
          if (freq_height[j] < 200000 && freq_height[j] > 200) { freq_array[j] = 16; }
@@ -210,7 +210,7 @@ Par la suite , chaque valeur de fréquence corresondante à l'une de celles du t
 > array[freq] : amplitude
 
 - [affFFT.ino](/Rendu%20Final/affFFT):
-L'Arduino récupère les informations envoyées par processing en Bluetooth sur le port com3 et les traîte en divisant le signal reçu en deux sous-chaînes dont le séparateur est ":". 
+   L'Arduino récupère les informations envoyées par processing en Bluetooth sur le port com3 et les traîte en divisant le signal reçu en deux sous-chaînes dont le séparateur est ":". 
 ```
   while (Serial3.available() > 0) {  //get FFT data from BT 
     
@@ -219,14 +219,13 @@ L'Arduino récupère les informations envoyées par processing en Bluetooth sur 
     int f = in.substring(0, in.indexOf(sep)).toInt();  //stands for the first part of the data (before ":") frequency 
     int ff = in.substring(in.indexOf(sep) + sep.length()).toInt(); //stands for the second part of data : range 
 ```
-Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel noir si la valeur précédente n'est plus attribuée, bleu s'il s'agit d'une nouvelle valeur , jaune si elle dépasse un certain seuil. 
+   Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel noir si la valeur précédente n'est plus attribuée, bleu s'il s'agit d'une nouvelle valeur , jaune si elle dépasse un certain seuil. 
 
 ## 2nd Programme : TFR via l'Arduino
-
 ### 1. Nouvelle librairie, nouveau concept :
-A ce stade , la première version utilisant un PC est proche de la complétion . ormis quelques détails esthétiques , nous décidons de s'attaquer à un tout autre problème : réaliser la TFR en n'utilisant que la puissance de traitement de l'Arduino. C'etait pour nous le seul véritabkle challenge étant donné que pléthore de méthodes de FFT existaient déja sur le web mais aucune n'etait restreinte aux capacités seules de l'arduino. C'est alors que nous avons découvert une nouvelle librairie [fft.h](https://github.com/kosme/arduinoFFT) de traitement dit "à points fixes". Mois gourmande en opérations élémentaires et implémentées dans l'IDE Arduino , cette méthode avait des avantages suffisants pour commencer une nouvelle version de notre projet.
+   A ce stade , la première version utilisant un PC est proche de la complétion. Hormis quelques détails esthétiques, nous décidons de s'attaquer à un tout autre problème : réaliser la TFR en n'utilisant que la puissance de traitement de l'Arduino. Là était pour nous le véritable challenge étant donné que pléthore de méthodes de FFT classiques existaient déja sur le web mais aucune n'était restreinte aux capacités seules de l'arduino. C'est alors que nous avons découvert une nouvelle librairie [fft.h](https://github.com/kosme/arduinoFFT) de traitement dit "à points fixes". Mois gourmande en opérations élémentaires et implémentées dans l'IDE Arduino , cette méthode avait des avantages suffisants pour commencer une nouvelle version de notre projet.
 ### 2. Principe :
-La TFR à points fixes fonctionne sur le principe suivant : Un sample du signal envoyé en entrée est capturé, il est analysé en moyenne sur cet intervalle de temps et un unique couple de valeurs fréquence:amplitude est récupéré. Bien moins précise, cette méthode permet néanmoins de contourner les limites techniques de la carte méga et ses 16Mhz de vitesse de calcul. 
+   La TFR à points fixes fonctionne sur le principe suivant : Un sample du signal envoyé en entrée est capturé, il est analysé en moyenne sur cet intervalle de temps et un unique couple de valeurs fréquence:amplitude est récupéré. Bien moins précise, cette méthode permet néanmoins de contourner les limites techniques de la carte méga et ses 16Mhz de vitesse de calcul. 
 
 ### 3. spectrum.ino
 
@@ -241,20 +240,19 @@ L'Arduino prend en entrée un signal analogique depuis la PIN 8, et capture un �
     if(val>max) max=val;                              //capture maximum level
     if(val<min) min=val;                              //capture minimum level
    ```
-L'Arduino effectue ensuite la FFT sur l'échantillon récupéré précédement, et affiche son résultat en différé.
+   L'Arduino effectue ensuite la FFT sur l'échantillon récupéré précédement, et affiche son résultat en différé.
 Le nombre de fois ou l'Arduino peut effectuer cette opération par seconde est proportionnelle à la vitesse de son proceseur.
    
-Le programme affiche ensuite le résultat sous forme de lignes bleues via la fonction matrix.drawLine.
+   Le programme affiche ensuite le résultat sous forme de lignes bleues via la fonction matrix.drawLine.
 Nous avons rencontré une série de problèmes qui ont retardé notre avancée. Ene effet , le microphone qui nous a été fourni présentait un défaut et pas des moindres , il ne laissait pas passer le courant et fonctionnait comme interrupteur ouvert. Le problème c'est que nous ne pouvions pas détecter si notre programme etait en cause ou le micro que nous n'avions pas suspecté. Après un test simple en mettant le micro en série avec une LED , nos avons cstaté son disfonctionnement et l'avons remplacé. Second problème , le gain de sortie du micro est extrêmement faible . N'etant pas équipé d'un amplificateur de qualité , nous avons eu recours à une manipulatin logicielle qui consiste à multiplier l'entrée analogique par une constante élevée (x50), multipliant au passage le bruit du micro et donc en sacrifiant encore en précision. 
 
 ## Améliorations esthétiques
-(séance 8 à 10, boite et améliorations esthétiques)
 ### 1. Séance 8 à 10 : Améliorer les résultats
 ### 2. Construction du support
 [Boite](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf)
 ### 3. De nouveaux types d'affichages
-Une fois les différentes méthodes pour réaliser la FFT terminée, nous avons suivi notre cahier des charges en décidant de créer de nouveaux types d'affichages et d'améliorer ceux déja existants. Pour cela, nous avons commencé par créer un nouveau type d'affichage pour [spectrum.ino](/Rendu%20Final/spectrum).
-Cette méthode d'affichage vise à limiter l'impact visuel du bruit, et augmenter la visibilité des signaux que nous arrivions à capter en branchant directement l'Arduino à un GBF. Il existe plusieurs versions de ce programme, ou on fait varier le nombre de cercles et ou affiche le résultat sur deux écrans, mais le principe est semblable. Elle récupère un certain nombre d'échantillons, et récupère le maximum d'amplitude parmis les valeurs de l'échantillon. Elle affiche le résultat sont forme d'un cercle par échantillon de fréquence dont le rayon varie en fonction du maximum obtenu. Lorsque ce maximum dépasse un seuil, le cercle devient en partie jaune :
+   Une fois les différentes méthodes pour réaliser la FFT terminée, nous avons suivi notre cahier des charges en décidant de créer de nouveaux types d'affichages et d'améliorer ceux déja existants. Pour cela, nous avons commencé par créer un nouveau type d'affichage pour [spectrum.ino](/Rendu%20Final/spectrum).
+   Cette méthode d'affichage vise à limiter l'impact visuel du bruit, et augmenter la visibilité des signaux que nous arrivions à capter en branchant directement l'Arduino à un GBF. Il existe plusieurs versions de ce programme, ou on fait varier le nombre de cercles et ou affiche le résultat sur deux écrans, mais le principe est semblable. Elle récupère un certain nombre d'échantillons, et récupère le maximum d'amplitude parmis les valeurs de l'échantillon. Elle affiche le résultat sont forme d'un cercle par échantillon de fréquence dont le rayon varie en fonction du maximum obtenu. Lorsque ce maximum dépasse un seuil, le cercle devient en partie jaune :
 vidéo disponible [ici](https://youtu.be/8QeODw8Q2Pk)
 ``` for(int i=0 ; i<8; i++){
     int maxi=0;
@@ -271,14 +269,14 @@ vidéo disponible [ici](https://youtu.be/8QeODw8Q2Pk)
       }
 } 
 ```
-Une fois cette version réalisée, nous avons décidé d'en créer une semblable pour Processing. Il a fallu modifier le programme, car Processing ne traite pas les informations ni de la même façon ni dans le même ordre. Le principe d'affichage reste le même, mais la vitesse de traitement est plus élevée.
+   Une fois cette version réalisée, nous avons décidé d'en créer une semblable pour Processing. Il a fallu modifier le programme, car Processing ne traite pas les informations ni de la même façon ni dans le même ordre. Le principe d'affichage reste le même, mais la vitesse de traitement est plus élevée.
 Vidéo disponible [ici](https://youtu.be/0CFA_ttialM)
 Enfin, nous avons créé une dernière version pour processFFT.pde à but purement esthétique. Attention, épileptiques s'abstenir ! 
 Vidéo disponible [ici](https://youtu.be/8qS_j6wB5zk)
 
 # Rendu :
 
-C'est pour cela que nous avons envisagé d'utiliser une carte arduino Due. Nous sommes toutefois restés sur notre carte d'origine car le processeur ARM de la carte due n'est pas compatible avec la librairie fft.h.
+   C'est pour cela que nous avons envisagé d'utiliser une carte arduino Due. Nous sommes toutefois restés sur notre carte d'origine car le processeur ARM de la carte due n'est pas compatible avec la librairie fft.h.
 
 
 
