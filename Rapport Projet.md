@@ -119,18 +119,25 @@ Des éléments mineurs à acheter :
 ## L'état de l'art
 Pour la réalisation de notre projet, nous avons pu nous appuyer sur ce qui avait déjà été réalisé par le passé.
 ### 1. Le montage
-Afin de relier l'écran à l'Arduino, il était nécessaire de réaliser un montage adapté. Heureusement, sur le site [Adafruit- Rentrer l'adresse internet], des indications précises pour tout type d'Arduino étaient présentes, nous avons donc pu terminer sans mal ce qui concernait le montage, qui représente seulement une partie mineure de notre projet. 
+Afin de relier l'écran à l'Arduino, il était nécessaire de réaliser un montage adapté. Heureusement, sur le site [Adafruit Industries](https://www.adafruit.com/product/2279), des indications précises pour tout type d'Arduino étaient présentes. Le module Bluetooth HC-06 est connecté en port communication et le micro ky-037 que nous avons obtenu par la suite nécessite une tension de 5V ainsi qu'une pin Analog. Nous avons donc pu terminer sans mal ce qui concernait le montage, qui représente seulement une partie mineure de notre projet. 
 ### 2. Les programmes et librairies
-Après quelques recherches, nous nous sommes rendus compte que la TFR était un algorithme peu être trop complexe pour que nous puissons le faire par nous même dans le temps imposé. Nous allions donc avoir également besoin de librairies déja faites permettant de réaliser des TFR. Ces librairies étaient déja implémentées dans les IDE que nous utilisions. Nous allions également pouvoir les programmes informatiques utilisant ces librairies, à la condition de les modifier pour les adapter au contexte
+Après quelques recherches, nous nous sommes rendus compte que la TFR était un algorithme trop complexe pour que nous puissons le faire par nous même dans le temps imposé. Nous allions donc avoir également besoin de librairies déjà faites permettant de les réaliser. Ces librairies étaient déja implémentées dans les IDE que nous utilisions. Nous allions également pouvoir faire usage des programmes déjà existants utilisant ces librairies, à la condition de les modifier pour les adapter au contexte.
 
 ## Dans notre contexte
-Je ne suis pas certain du sens à donner à cette partie pour le moment, je la met donc de côté en attendant.
+L'arduino possède un cadre d'application "type", une donnée à traiter déclenche une action. Ce principe est ce que nous attendons pour la réalisation de notre projet. Les données brutes (signaux sonores) doivent être traîtées et leur résultat déclenche l'action d'affichage. Dans ce cas précis l'Arduino est une plateforme suffisante et peu coûteuse pour la réalisation du projet.
 
 # Déroulement :
 (J'ai réutilisé peu ou prou les parties du diapos, elles m'ont l'air adaptées et en accord avec ce qu'on doit dire)
 ## Se familiariser avec le matériel
 (Ici on fait une présentation exhaustive du matériel(références et propriétés techniques), et on parle de la partie montage, jusqu'à la séance 2 incluse)
-### 1. Séances 1 et 2 : définition du projet et prise en main
+### 1. Premières séances:
+Notre professeur encadrant, en sachant le thème que nous avions choisi, a mis à notre disposition un écran LED 64X32 Pix de marque Adafruit ainsi que l'alimentation correspondante. Pour la carte Arduino nous avons utilisé une carte MEGA 2560 possédant un plus grand nombre de ports et nous permettant d'anticiper un éventuel déficit de puissance de traitement. En recherchant la documentation liée à l'écran, nous sommes tombés sur le site officiel d'Adafruit Industries qui met en lien dans la description du produit une notice de branchement ainsi qu'un lien vers des exemples de programmes utilisant leur librairie. Les branchements détaillés sur [cette page](https://learn.adafruit.com/32x16-32x32-rgb-led-matrix/connecting-with-jumper-wires) nous ont permis d'éxecuter nos premiers affichages. Cet écran pour fonctionner nécessite deux librairies :
+1. [RGB Matrix pannel library](https://github.com/adafruit/RGB-matrix-Panel)
+2. [Adafruit GFX Library](https://github.com/adafruit/Adafruit-GFX-Library)
+
+Une fois ces deux librairies installées sur l'IDE Arduino, des fichiers tests étaient présents fans la section "exemples" de l'IDE et nous avons pu appréhender les premières fonctions que nous offrent l'écran, parmis lesquelles: 
+- 
+
 ### 2. Le matériel
 ## 1er Programme : TFR via Processing
 (Ici on parle des séances 3 et 4 (TFR via Processing, Bluetooth), et on explique en détail le fonctionnement de la TFR via Processing)
