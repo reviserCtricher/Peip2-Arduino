@@ -47,6 +47,7 @@
 ### La puce **Arduino** :
 Dans le cadre du cours d'électronique, nous avons eu l'occasion de faire preuve de créativité dans un sujet libre utilisant les capacités que nous offre Arduino et ses composants. Une carte Arduino est une puce programmable possédant au minima des entrées/sorties numériques/analogiques et une prise USB. Elle fonctionne selon un principe simple : un signal reçu depuis une entrée déclenche une ou des actions, définies dans un programme enregistré dans la carte. Il est possible d'y connecter une batterie d'appareils capables d'acquérir des données (capteurs) et de moyens permettants à la puce d'intéragir avec le monde extérieur(led, moteurs etc...). Nous ferons le long de ce projet l'abus de langage "l'Arduino" pour designer la puce Arduino, ce terme désignant en réalité l'écosystème Arduino. 
 Dans notre cas , nous simplifierons le fonctionnement de l'Arduino selon le principe suivant :
+
 > **Réception --> Traitement --> Action**
 
 ### Les contraintes :
@@ -151,17 +152,33 @@ Notre premier programme test de l'écran fut un magniique sapin de noël dont l'
 ![testSapin](Images/testSapin.jpg)
 
 Par la suite , nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT). Nous avons au passage découvert les ports communication de la carte méga qui ne figuraient pas sur notre modèle d'apprentissage. Ces ports nous permettent principalement d'éviter de déclarer des variables pour les branchements des RX et TX de l'arduino et de simplement l'utiliser comme un port communication (ici com3 par exemple). Pour tester la connexions BT enmême temps que nos capacités d'affichae en temps réel sur l'écran, nous avons choisi d'afficher un cercle dont nous faisons varier en temps réel le rayon sur un téléphone avec l'application [Bluetooth Electronics](http://www.keuwl.com/apps/bluetoothelectronics/). Le programme nommé [led32X64.ino](/Rendu%20Final/led34X64) nous donné une information capitale sur les caractéristiques que nous attendions du Bluetooth dans ce projet : la rapidité. En effet lors des premiers tests de variation du rayon du cercle , nous avons remarqué une lattence importante . Une modification de la vitesse de communication du BT à l'aide du programme cité précédemment et de la commante :
+
 > AT+BAUD6 (à écrire dans le moniteur série)
+
 Ce qui nous permet d'augmenter la vitesse de communication du HC-06 à 38400 , sans oublier de l'augmenter côté écran également :
+
 > serial3.begin(38400);
 
 Etant donné que nous utilisions notre unique téléphone avec lapplication , nous n'avons pas pris de vidéo du test.
 
-Maintenant que nous avons pris en main toutes les fonctions principales de notre projet , nous pouyvons nous attaquer à la TFR.
+Maintenant que nous avons pris en main toutes les fonctions principales de notre projet , nous pouvons nous attaquer à la TFR.
 
 ## 1er Programme : TFR via Processing
 (Ici on parle des séances 3 et 4 (TFR via Processing, Bluetooth), et on explique en détail le fonctionnement de la TFR via Processing)
-### 1. Séances 3 et 4 : Une première méthode pour réaliser une TFR
+### 1. Une première méthode pour réaliser une TFR
+Après avoir testé plusieurs librairies Arduino pour éxecuter la TFR, nous avons choisi d'utiliser le logiciel Processing sur PC et de revenir a un traitement FFT via arduino plus tard. Toutes les méthodes que nous avons trouvés utlisaient un PC pour le partie traitement, avant d'envoyer le résultat à l'Arduino.
+Notre premier essai d'affichage des fréquences utilise la librairie [Minim](http://code.compartmental.net/tools/minim/) de Processing qui permet la lecture de fichiers audios et dispose d'outils de traitement du signal. Dans cette première version Processing "découpe" le signal en fréquences et utilise l'intensité obtenue pour définir la taille des pics à dessiner. Pour se faire nous avons créé une matrice(Array) avec l'ensemble des valeurs à afficher.
+Une fois le traitement effectué, les informations sont envoyées à l'Arduino qui dessine (methode draw) les pics. 
+Nous nous sommes en grande partie inspirés des travaux du Github [Afreiday](https://github.com/afreiday) dont la plus grosse modification à effectuer était de lire un fichier audio plutot qu'une sortie d'une carte son par exemple.
+Pour l'instant la connection est filaire mais nous avons déjà préparé un module bluetooth par lequel transitera l'information. La communication sans fil repose sur la possibilité qu'offre windows 10 de selectionner et éditer les Ports sur lesquels se connectent les périphériques. Après une première connection , tout périphérique se voit attribuer un numéro COM et est enregistré. Par la suite nous avons utilisé ce numéro pour se connecter à l'arduino et lui envoyer les données traitées :
+
+> String serial_port = "COM13"; //set the out port to send data from the FFT (uses Bluetooth port from windows configuration pannel)
+
+La source du signal audio est un objet de tye Minim dont nous signalons avant de compiler et executer le programme la source :
+
+> in = minim.loadFile("centipede.mp3"); //set the minim source from the file (must be an mp3 in the same directory)
+
+Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemet est quasi instantanné et peut être visionné 
 ### 2. Principe et montage
 ### 3. processFFT.pde et affFFT.ino
 ## 2nd Programme : TFR via l'Arduino
