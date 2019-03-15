@@ -155,7 +155,7 @@ Notre premier programme test de l'écran fut un magniique sapin de noël dont l'
 
 Par la suite , nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT). Nous avons au passage découvert les ports communication de la carte méga qui ne figuraient pas sur notre modèle d'apprentissage. Ces ports nous permettent principalement d'éviter de déclarer des variables pour les branchements des RX et TX de l'arduino et de simplement l'utiliser comme un port communication (ici com3 par exemple). Pour tester la connexions BT enmême temps que nos capacités d'affichae en temps réel sur l'écran, nous avons choisi d'afficher un cercle dont nous faisons varier en temps réel le rayon sur un téléphone avec l'application [Bluetooth Electronics](http://www.keuwl.com/apps/bluetoothelectronics/). Le programme nommé [led32X64.ino](/Rendu%20Final/led34X64) nous donné une information capitale sur les caractéristiques que nous attendions du Bluetooth dans ce projet : la rapidité. En effet lors des premiers tests de variation du rayon du cercle , nous avons remarqué une lattence importante . Une modification de la vitesse de communication du BT à l'aide du programme cité précédemment et de la commante :
 
-` AT+BAUD6 (à écrire dans le moniteur série)`
+> AT+BAUD6 (à écrire dans le moniteur série)
 
 Ce qui nous permet d'augmenter la vitesse de communication du HC-06 à 38400 , sans oublier de l'augmenter côté écran également :
 
@@ -175,7 +175,7 @@ Une fois le traitement effectué, les informations sont envoyées à l'Arduino q
 Nous nous sommes en grande partie inspirés des travaux du Github [Afreiday](https://github.com/afreiday) dont la plus grosse modification à effectuer était de lire un fichier audio plutot qu'une sortie d'une carte son par exemple.
 Pour l'instant la connection est filaire mais nous avons déjà préparé un module bluetooth par lequel transitera l'information. La communication sans fil repose sur la possibilité qu'offre windows 10 de selectionner et éditer les Ports sur lesquels se connectent les périphériques. Après une première connection , tout périphérique se voit attribuer un numéro COM et est enregistré. Par la suite nous avons utilisé ce numéro pour se connecter à l'arduino et lui envoyer les données traitées :
 
-` String serial_port = "COM13"; //set the out port to send data from the FFT (uses Bluetooth port from windows configuration pannel)`
+`String serial_port = "COM13"; //set the out port to send data from the FFT (uses Bluetooth port from windows configuration pannel)`
 
 La source du signal audio est un objet de tye Minim dont nous signalons avant de compiler et executer le programme la source :
 
@@ -184,6 +184,7 @@ La source du signal audio est un objet de tye Minim dont nous signalons avant de
 Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemet est quasi instantanné et peut être visionné [ici](https://youtu.be/rAYWvyrwPwg).
 
 ### 2. Principe :
+
 Cette méthode repose sur l'utilisation de deux programmes qui fonctionnent de concert :
 - [processFFT.pde](/Rendu%20Final/processFFT): 
 Le programme récupère en entrée un fichier mp3 et le convertit en objet minim. La FFT est effectué sur l'objet et nous récupérons un couple de valeurs fréquence et amplitude . Les fréquences sont triées et adaptées à la dimension des sections que nous imposons (il est difficile de représenter sur un écran de longueur 64 pix une plage de fréquence de 20hz à 20Khz). Après avoir fait une moyenne des valeurs obtenues sur chaque plages , nous initialisons un tableau contenant toutes les valeurs possibles :
@@ -208,7 +209,20 @@ for (int j = 0; j < num_levels; j++) {
     else if (freq_height[j] < 1 )                             { freq_array[j] = 0; }
 }
 ```
-- [affFFT.ino](/Rendu%20Final/affFFT)
+Par la suite , chaque valeur de fréquence corresondante à l'une de celles du tableau est envoyé sous la forme :
+> array[freq] : amplitude
+
+- [affFFT.ino](/Rendu%20Final/affFFT):
+L'Arduino récupère les informations envoyées par processing en Bluetooth sur le port com3 et les traîte en divisant le signal reçu en deux sous-chaînes dont le séparateur est ":". 
+```
+  while (Serial3.available() > 0) {  //get FFT data from BT 
+    
+    String in = Serial3.readStringUntil('\n');
+
+    int f = in.substring(0, in.indexOf(sep)).toInt();  //stands for the first part of the data (before ":") frequency 
+    int ff = in.substring(in.indexOf(sep) + sep.length()).toInt(); //stands for the second part of data : range 
+```
+Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel bleu
 ## 2nd Programme : TFR via l'Arduino
 (Ici on parle des séances 5 à 7, et on explique en détail le fonctionnement de la TFR via Arduino)
 ### 1. Séances 5 à 7 : Une autre façon de réaliser un spectrophotomètre
