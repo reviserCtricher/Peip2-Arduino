@@ -150,7 +150,10 @@ Notre premier programme test de l'écran fut un magniique sapin de noël dont l'
 
 ![testSapin](Images/testSapin.jpg)
 
-Par la suite , nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT)
+Par la suite , nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT). Nous avons au passage découvert les ports communication de la carte méga qui ne figuraient pas sur notre modèle d'apprentissage. Ces ports nous permettent principalement d'éviter de déclarer des variables pour les branchements des RX et TX de l'arduino et de simplement l'utiliser comme un port communication (ici com3 par exemple). Pour tester la connexions BT enmême temps que nos capacités d'affichae en temps réel sur l'écran, nous avons choisi d'afficher un cercle dont nous faisons varier en temps réel le rayon sur un téléphone avec l'application [Bluetooth Electronics](http://www.keuwl.com/apps/bluetoothelectronics/). Le programme nommé [led32X64.ino](/Rendu%20Final/led34X64) nous donné une information capitale sur les caractéristiques que nous attendions du Bluetooth dans ce projet : la rapidité. En effet lors des premiers tests de variation du rayon du cercle , nous avons remarqué une lattence importante . Une modification de la vitesse de communication du BT à l'aide du programme cité précédemment et de la commante 
+^AT+BAUD6
+Ce qui nous permet d'augmenter la vitesse de communication du HC-06 à 38400 , sans oublier de l'augmenter côté écran également :
+^serial3.begin(38400);
 
 ## 1er Programme : TFR via Processing
 (Ici on parle des séances 3 et 4 (TFR via Processing, Bluetooth), et on explique en détail le fonctionnement de la TFR via Processing)
