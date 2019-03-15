@@ -178,7 +178,12 @@ La source du signal audio est un objet de tye Minim dont nous signalons avant de
 
 > in = minim.loadFile("centipede.mp3"); //set the minim source from the file (must be an mp3 in the same directory)
 
-Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemet est quasi instantanné et peut être visionné 
+Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitemet est quasi instantanné et peut être visionné ![ici](https://youtu.be/rAYWvyrwPwg)
+
+
+
+
+
 ### 2. Principe et montage
 ### 3. processFFT.pde et affFFT.ino
 ## 2nd Programme : TFR via l'Arduino
