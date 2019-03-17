@@ -101,7 +101,7 @@ Une grande partie du matériel nécessaire à la réalisation de notre projet é
 ![Arduino Mega](Images/mega.jpg)
 
 - [x] Une allimentation filaire
-- [x] Ecran led Adafruit Industries 32*64
+- [x] Ecran led Adafruit Industries 32x64
 
 ![Ecran LED](/Images/ecran.jpg)
 
