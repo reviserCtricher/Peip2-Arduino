@@ -247,7 +247,8 @@ Nous avons rencontré une série de problèmes qui ont retardé notre avancée. 
 
 ## Améliorations esthétiques
 ### 1. Construction du support
-[Boite](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf)
+Plans du [support](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf).
+Explication FabLab.
 ### 2. De nouveaux types d'affichages
    Une fois les différentes méthodes pour réaliser la FFT terminée, nous avons suivi notre cahier des charges en décidant de créer de nouveaux types d'affichages et d'améliorer ceux déja existants. Pour cela, nous avons commencé par créer un nouveau type d'affichage pour [spectrum.ino](/Rendu%20Final/spectrum).
    Cette méthode d'affichage vise à limiter l'impact visuel du bruit, et augmenter la visibilité des signaux que nous arrivions à capter en branchant directement l'Arduino à un GBF. Il existe plusieurs versions de ce programme, ou on fait varier le nombre de cercles et ou affiche le résultat sur deux écrans, mais le principe est semblable. Elle récupère un certain nombre d'échantillons, et récupère le maximum d'amplitude parmis les valeurs de l'échantillon. Elle affiche le résultat sont forme d'un cercle par échantillon de fréquence dont le rayon varie en fonction du maximum obtenu. Lorsque ce maximum dépasse un seuil, le cercle devient en partie jaune :
