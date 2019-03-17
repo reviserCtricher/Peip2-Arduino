@@ -221,7 +221,7 @@ Par la suite , chaque valeur de fréquence corresondante à l'une de celles du t
 ```
    Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel noir si la valeur précédente n'est plus attribuée, bleu s'il s'agit d'une nouvelle valeur , jaune si elle dépasse un certain seuil. 
 
-## 2nd Programme : TFR via l'Arduino
+## TFR via l'Arduino
 ### 1. Nouvelle librairie, nouveau concept :
    A ce stade , la première version utilisant un PC est proche de la complétion. Hormis quelques détails esthétiques, nous décidons de s'attaquer à un tout autre problème : réaliser la TFR en n'utilisant que la puissance de traitement de l'Arduino. Là était pour nous le véritable challenge étant donné que pléthore de méthodes de FFT classiques existaient déja sur le web mais aucune n'était restreinte aux capacités seules de l'arduino. C'est alors que nous avons découvert une nouvelle librairie [fft.h](https://github.com/kosme/arduinoFFT) de traitement dit "à points fixes". Mois gourmande en opérations élémentaires et implémentées dans l'IDE Arduino , cette méthode avait des avantages suffisants pour commencer une nouvelle version de notre projet.
 ### 2. Principe :
