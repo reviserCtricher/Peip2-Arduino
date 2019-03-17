@@ -70,7 +70,7 @@ La confirmation de notre projet nous est venue avant tout de nos intérêts resp
 ## Quelles applications ?
 
 ### Utilité au quotidien
-   Le premier exemple qui nous est venu, étant tous les deux musiciens, est le fonctionnement d'un accordeur. Un son émis par l'instrument est capté par un micro (sonore ou à vibrations), analysé en fréquences et un affichage de la fréquence actuelle constitue la note jouée. C'est le même principe lorsqu'il s'agit de régler l'équilibrage des différentes enceintes d'un home cinéma par exemple. La mesure des différentes fréquences permet d'avoir une balance entre grave et aigus adaptés au type de divertissement. D'autres applications dans les sciences existent pour l'analyse de systèmes mécaniques.
+   Le premier exemple qui nous est venu, étant tous les deux musiciens, est le fonctionnement d'un accordeur. Un son émis par l'instrument est capté par un micro (sonore ou à vibrations), analysé en fréquences et un affichage de la fréquence actuelle constitue la note jouée. C'est le même principe lorsqu'il s'agit de régler l'équilibrage des différentes enceintes d'un home cinéma par exemple. La mesure des différentes fréquences permet d'avoir une balance entre grave et aigus adaptée au type de divertissement. D'autres applications dans les sciences existent pour l'analyse de systèmes mécaniques.
 
 ## Comment le réaliser ?
 ### Les ressources
