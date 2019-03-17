@@ -29,9 +29,8 @@
   
 4. [**Déroulement**](#deroulement-)
    - Se familiariser avec le matériel
-   - 1er Programme : TFR via Processing
-   - 2nd Programme : TFR via l'Arduino
-   - Problèmes rencontrés lors du projet
+   - Première version : TFR via Processing
+   - Seconde version : TFR via l'Arduino
    - Améliorations esthétiques
   
 5. [**Rendu**](#rendu-)
@@ -46,12 +45,12 @@
 ## Pourquoi ce projet ?
 ### La puce **Arduino** :
    Dans le cadre du cours d'électronique, nous avons eu l'occasion de faire preuve de créativité dans un sujet libre utilisant les capacités que nous offre Arduino et ses composants. Une carte Arduino est une puce programmable possédant au minima des entrées/sorties numériques/analogiques et une prise USB. Elle fonctionne selon un principe simple : un signal reçu depuis une entrée déclenche une ou des actions, définies dans un programme enregistré dans la carte. Il est possible d'y connecter une batterie d'appareils capables d'acquérir des données (capteurs) et de moyens permettants à la puce d'intéragir avec le monde extérieur(led, moteurs etc...). Nous ferons le long de ce projet l'abus de langage "l'Arduino" pour designer la puce Arduino, ce terme désignant en réalité l'écosystème Arduino. 
-Dans notre cas , nous simplifierons le fonctionnement de l'Arduino selon le principe suivant :
+   Dans notre cas , nous simplifierons le fonctionnement de l'Arduino selon le principe suivant :
 
 > **Réception --> Traitement --> Action**
 
 ### Les contraintes :
-Malgré la certaine liberté dont nous disposons, nous sommes tenus de respecter les contraintes suivantes :
+   Malgré la certaine liberté dont nous disposons, nous sommes tenus de respecter les contraintes suivantes :
 - La faisabilité : il s'agit de mettre en pratique et d'approfondir nos connaissances. Nous devons veiller à ne pas être trop ambitieux et rester conscients de ce qui relève de notre niveau de compétence.
 - Le coût : le budget de l'ecole n'étant pas illimité il faut veiller à ce que les sommes dépensées soient en commune mesure avec la nature du projet.
 - Le temps : nous disposons d'un semestre et demi pour mener le projet à son terme. Toutefois, si des difficultés techniques sont rencontrées, il est possible de minimiser la pénalisation en faisant preuve de d'ingéniosité et en proposant des solutions.
@@ -64,7 +63,7 @@ Malgré la certaine liberté dont nous disposons, nous sommes tenus de respecter
 - Un trieur d'objets adaptatif
 - Un trackpad laser pour PC
 
-Toutefois nous avons rencontré un certain nombre de difficultés techniques qui semblaient compromettre une à une nos idées.
+   Toutefois nous avons rencontré un certain nombre de difficultés techniques qui semblaient compromettre une à une nos idées.
 La confirmation de notre projet nous est venue avant tout de nos intérêts respectifs. Comment concilier musique, approche mathématique et programmation ? En nous penchant sur les vastes capacités que nous offre Arduino nous avons fini par nous accorder sur la création d'un afficheur de fréquence tel qu'on en trouve sur n'importe quel équaliseur , en ayant une vague notion de ce qu'est la transformation de Fourier (merci l'utilisation de l'oscilloscope).
 
 ## Quelles applications ?
@@ -74,22 +73,22 @@ La confirmation de notre projet nous est venue avant tout de nos intérêts resp
 
 ## Comment le réaliser ?
 ### Les ressources
-Sans avoir étudié en détail les caractéristiques du système, nous savons qu'il nous faut un capteur pour l'acquisition du son, un boitier d'acquisition, un logiciel de traitement et enfin un écran.
+   Sans avoir étudié en détail les caractéristiques du système, nous savons qu'il nous faut un capteur pour l'acquisition du son, un boitier d'acquisition, un logiciel de traitement et enfin un écran.
 Un lot d'écrans LED etait déjà à notre disposition en salle de TP, nous avons donc décidé de les utiliser.
 
 ### Le principe
-Le coeur du projet repose sur un opérateur qu'est la Transformation de Fourier Rapide (TFR) : il s'agit d'un algorithme de la Transformation de Fourier Discrète (TFD). La TFD est une méthode permettant de réaliser une transformée de Fourier pour un signal sur une durée finie que l'on échantillonne en fonction du temps. La transformation de Fourier rapide n'est qu'un algorithme de cette même transformation qui nécessite un nombre d'opérations beaucoup moindre pour les grands échantillons. Cette méthode nous permet donc de réaliser les transformations de Fourier Discrètes plus rapidement.
-Le fonctionnement de la FFT nous pose toutefois un problème. Etant très gourmande en ressources, nous sommes conscients que la faible puissance de calcul de l'arduino peut être un frein à la réalisation d'un programme devant gérer à la fois l'affichage sur l'écran LCD et les calculs liés à la TFR. Nous avons dans un premier temps pensé à l'utilisation d'un PC afin de déléguer les calculs à un processeur plus puissant. Nous avons également à disposition des cartes Arduino Mega et Due, qui devraient en théorie être assez puissante pour réaliser des TFR sommaires.
+   Le coeur du projet repose sur un opérateur qu'est la Transformation de Fourier Rapide (TFR) : il s'agit d'un algorithme de la Transformation de Fourier Discrète (TFD). La TFD est une méthode permettant de réaliser une transformée de Fourier pour un signal sur une durée finie que l'on échantillonne en fonction du temps. La transformation de Fourier rapide n'est qu'un algorithme de cette même transformation qui nécessite un nombre d'opérations beaucoup moindre pour les grands échantillons. Cette méthode nous permet donc de réaliser les transformations de Fourier Discrètes plus rapidement.
+   Le fonctionnement de la FFT nous pose toutefois un problème. Etant très gourmande en ressources, nous sommes conscients que la faible puissance de calcul de l'arduino peut être un frein à la réalisation d'un programme devant gérer à la fois l'affichage sur l'écran LCD et les calculs liés à la TFR. Nous avons dans un premier temps pensé à l'utilisation d'un PC afin de déléguer les calculs à un processeur plus puissant. Nous avons également à disposition des cartes Arduino Mega et Due, qui devraient en théorie être assez puissante pour réaliser des TFR sommaires.
 
 ![algo.jpg](/Images/algo.jpg)
 
 # Etablissement du cahier des charges :
 ## Découpage en fonctions
-Afin de rédiger le cahier des charges (consultable [ici](/CDC.md)), nous avons choisi de découper notre projet en étapes simples que nous tâcherons de réaliser et mettre en relations entre elles par la suite :
+   Afin de rédiger le cahier des charges (consultable [ici](/CDC.md)), nous avons choisi de découper notre projet en étapes simples que nous tâcherons de réaliser et mettre en relations entre elles par la suite :
 ### 1. L'affichage :
-Afin d'afficher correctement les résultats de notre programme, il est essentiel de maîtriser les possibilités d'affichage que nous à notre disposition. Nous devons réfléchir à la fois à un affichage clair, intelligible et esthétique. Pour cela le tracé de formes géométriques , de droites et l'affichage de données sur l'écran constituent des éléments de base à acquérir pour travailler sur le rendu final.
+   Afin d'afficher correctement les résultats de notre programme, il est essentiel de maîtriser les possibilités d'affichage que nous à notre disposition. Nous devons réfléchir à la fois à un affichage clair, intelligible et esthétique. Pour cela le tracé de formes géométriques , de droites et l'affichage de données sur l'écran constituent des éléments de base à acquérir pour travailler sur le rendu final.
 ### 2. La communication radio-fréquence :
-Les différentes composantes de notre projet étant fixes, les connections utilisées auraient pu être réalisées de façon filiaire. Toutefois afin de respecter les contraintes du projet, nous allons mettre en place un connexion Bluetooth dont nous avons étudié le fonctionnement auparavant. Cette connexion servira d'intermédiaire entre le traitement et l'affichage des données.
+   Les différentes composantes de notre projet étant fixes, les connections utilisées auraient pu être réalisées de façon filiaire. Toutefois afin de respecter les contraintes du projet, nous allons mettre en place un connexion Bluetooth dont nous avons étudié le fonctionnement auparavant. Cette connexion servira d'intermédiaire entre le traitement et l'affichage des données.
 ### 3. Opérer une Transformation de Fourier Rapide sur le signal d'entrée:
 Nous devons réaliser une TFR sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision de réaliser dans un premier temps une TFR sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard. En effet, nous avions un doute quant à la capacité d'un Arduino à effectuer la TFR assez rapidement. 
 
@@ -120,24 +119,24 @@ Des éléments mineurs à acheter :
 
 # Recherches :
 ## L'état de l'art
-Pour la réalisation de notre projet, nous avons pu nous appuyer sur ce qui avait déjà été réalisé par le passé.
+   Pour la réalisation de notre projet, nous avons pu nous appuyer sur ce qui avait déjà été réalisé par le passé.
 ### 1. Le montage
-Afin de relier l'écran à l'Arduino, il était nécessaire de réaliser un montage adapté. Heureusement, sur le site [Adafruit Industries](https://www.adafruit.com/product/2279), des indications précises pour tout type d'Arduino étaient présentes. Le module Bluetooth HC-06 est connecté en port communication et le micro ky-037 que nous avons obtenu par la suite nécessite une tension de 5V ainsi qu'une PIN Analog. Nous avons donc pu terminer sans mal ce qui concernait le montage, qui représente seulement une partie mineure de notre projet. 
+   Afin de relier l'écran à l'Arduino, il était nécessaire de réaliser un montage adapté. Heureusement, sur le site [Adafruit Industries](https://www.adafruit.com/product/2279), des indications précises pour tout type d'Arduino étaient présentes. Le module Bluetooth HC-06 est connecté en port communication et le micro ky-037 que nous avons obtenu par la suite nécessite une tension de 5V ainsi qu'une PIN Analog. Nous avons donc pu terminer sans mal ce qui concernait le montage, qui représente seulement une partie mineure de notre projet. 
 ### 2. Les programmes et librairies
-Après quelques recherches, nous nous sommes rendus compte que la TFR était un algorithme trop complexe pour que nous puissons le programmer par nous-même dans le temps imposé. Nous allions donc avoir également besoin de librairies déjà faites permettant de les réaliser. Ces librairies étaient déja implémentées dans les IDE que nous utilisions. Nous allions également pouvoir faire usage des programmes déjà existants utilisant ces librairies, à la condition de les modifier pour les adapter au contexte.
+   Après quelques recherches, nous nous sommes rendus compte que la TFR était un algorithme trop complexe pour que nous puissons le programmer par nous-même dans le temps imposé. Nous allions donc avoir également besoin de librairies déjà faites permettant de les réaliser. Ces librairies étaient déja implémentées dans les IDE que nous utilisions. Nous allions également pouvoir faire usage des programmes déjà existants utilisant ces librairies, à la condition de les modifier pour les adapter au contexte.
 
 ## Dans notre contexte
-L'Arduino possède un cadre d'application "type", une donnée à traiter déclenche une action. Ce principe est ce que nous attendons pour la réalisation de notre projet. Les données brutes (signaux sonores) doivent être traitées et leur résultat déclenche l'action d'affichage. Dans ce cas précis l'Arduino est une plateforme suffisante et peu coûteuse pour la réalisation du projet.
+   L'Arduino possède un cadre d'application "type", une donnée à traiter déclenche une action. Ce principe est ce que nous attendons pour la réalisation de notre projet. Les données brutes (signaux sonores) doivent être traitées et leur résultat déclenche l'action d'affichage. Dans ce cas précis l'Arduino est une plateforme suffisante et peu coûteuse pour la réalisation du projet.
 
-# Déroulement :
+# Deroulement :
 ## Se familiariser avec le matériel
 ### 1. Premières séances:
-Notre professeur encadrant, connaissant notre sujet, a mis à notre disposition un écran LED 64X32 Pixels de marque Adafruit ainsi que l'alimentation correspondante. Pour la carte Arduino nous avons utilisé une carte MEGA 2560 possédant un plus grand nombre de ports et nous permettant d'anticiper un éventuel déficit de puissance de traitement. En recherchant la documentation liée à l'écran, nous sommes tombés sur le site officiel d'Adafruit Industries qui met en lien dans la description du produit une notice de branchement ainsi qu'un lien vers des exemples de programmes utilisant leur librairie. Les branchements détaillés sur [cette page](https://learn.adafruit.com/32x16-32x32-rgb-led-matrix/connecting-with-jumper-wires) nous ont permis d'éxecuter nos premiers affichages. Cet écran pour fonctionner nécessite deux librairies :
+   Notre professeur encadrant, connaissant notre sujet, a mis à notre disposition un écran LED 64X32 Pixels de marque Adafruit ainsi que l'alimentation correspondante. Pour la carte Arduino nous avons utilisé une carte MEGA 2560 possédant un plus grand nombre de ports et nous permettant d'anticiper un éventuel déficit de puissance de traitement. En recherchant la documentation liée à l'écran, nous sommes tombés sur le site officiel d'Adafruit Industries qui met en lien dans la description du produit une notice de branchement ainsi qu'un lien vers des exemples de programmes utilisant leur librairie. Les branchements détaillés sur [cette page](https://learn.adafruit.com/32x16-32x32-rgb-led-matrix/connecting-with-jumper-wires) nous ont permis d'éxecuter nos premiers affichages. Cet écran pour fonctionner nécessite deux librairies :
 
 1. [RGB Matrix pannel library](https://github.com/adafruit/RGB-matrix-Panel)
 2. [Adafruit GFX Library](https://github.com/adafruit/Adafruit-GFX-Library)
 
-Une fois ces deux librairies installées sur l'IDE Arduino, des fichiers tests étaient présents dans la section "exemples" de l'IDE et nous avons pu appréhender les premières fonctions que nous offrent l'écran, parmis lesquelles: 
+   Une fois ces deux librairies installées sur l'IDE Arduino, des fichiers tests étaient présents dans la section "exemples" de l'IDE et nous avons pu appréhender les premières fonctions que nous offrent l'écran, parmis lesquelles: 
 - color = matrix.color333(R,V,B) : renvoie une couleur formée par synthèse additive des trois composantes rouge vert bleu .
 - matrix.drawPixel(x, y, color) : dessine un Pixel en (x,y) .
 - matrix.fillRect(x, y, L, l, color) : dessine un rectangle plein en (x,y) de longueur L et de hauteur l.
@@ -151,7 +150,7 @@ Notre premier programme test de l'écran fut un magnifique sapin de noël dont l
 
 ![testSapin](Images/testSapin.jpg)
 
-Par la suite, nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT). Nous avions au passage découvert les ports communication de la carte MEGA qui ne figuraient pas sur notre modèle d'apprentissage. Ces ports nous permettent principalement d'éviter d'avoir à déclarer des variables pour les branchements des RX et TX de l'arduino et de l'utiliser comme un port communication (ici com3 par exemple). Pour tester la connexions BT en même temps que nos capacités d'affichage en temps réel sur l'écran, nous avions choisi d'afficher un cercle dont nous faisions varier en temps réel le rayon sur un téléphone avec l'application [Bluetooth Electronics](http://www.keuwl.com/apps/bluetoothelectronics/). Le programme nommé [led32X64.ino](/Rendu%20Final/led34X64) nous a donné une information capitale sur les caractéristiques que nous attendions du Bluetooth dans ce projet : la rapidité. En effet lors des premiers tests de variation du rayon du cercle, nous avions remarqué une lattence importante. Une modification de la vitesse de communication du BT à l'aide du programme cité précédemment et de la commande :
+   Par la suite, nous avons établi la connexion Bluetooth de l'arduino à l'aide du même module HC-06 que nous utilisions en cours ainsi que son programme de setup [commBT.ino](/Rendu%20Final/commBT). Nous avions au passage découvert les ports communication de la carte MEGA qui ne figuraient pas sur notre modèle d'apprentissage. Ces ports nous permettent principalement d'éviter d'avoir à déclarer des variables pour les branchements des RX et TX de l'arduino et de l'utiliser comme un port communication (ici com3 par exemple). Pour tester la connexions BT en même temps que nos capacités d'affichage en temps réel sur l'écran, nous avions choisi d'afficher un cercle dont nous faisions varier en temps réel le rayon sur un téléphone avec l'application [Bluetooth Electronics](http://www.keuwl.com/apps/bluetoothelectronics/). Le programme nommé [led32X64.ino](/Rendu%20Final/led34X64) nous a donné une information capitale sur les caractéristiques que nous attendions du Bluetooth dans ce projet : la rapidité. En effet lors des premiers tests de variation du rayon du cercle, nous avions remarqué une lattence importante. Une modification de la vitesse de communication du BT à l'aide du programme cité précédemment et de la commande :
 
 > AT+BAUD6 (à écrire dans le moniteur série)
 
@@ -166,11 +165,11 @@ Maintenant que nous avions pris en main toutes les fonctions principales de notr
 ## TFR via Processing
 ### 1. Une première méthode pour réaliser une TFR
 
-Après avoir testé plusieurs librairies Arduino pour éxecuter la TFR, nous avions choisi d'utiliser le logiciel Processing sur PC et de revenir a un traitement FFT via arduino plus tard. Toutes les méthodes que nous avons trouvés utlisaient un PC pour le partie traitement, avant d'envoyer le résultat à l'Arduino.
-Notre premier essai d'affichage des fréquences utilise la librairie [Minim](http://code.compartmental.net/tools/minim/) de Processing qui permet la lecture de fichiers audios et dispose d'outils de traitement du signal. Dans cette première version Processing "découpe" le signal en fréquences et utilise l'intensité obtenue pour définir la taille des pics à dessiner. Pour se faire nous avons créé une matrice(Array) avec l'ensemble des valeurs à afficher.
-Une fois le traitement effectué, les informations sont envoyées à l'Arduino qui dessine (methode draw) les pics. 
+   Après avoir testé plusieurs librairies Arduino pour éxecuter la TFR, nous avions choisi d'utiliser le logiciel Processing sur PC et de revenir a un traitement FFT via arduino plus tard. Toutes les méthodes que nous avons trouvés utlisaient un PC pour le partie traitement, avant d'envoyer le résultat à l'Arduino.
+   Notre premier essai d'affichage des fréquences utilise la librairie [Minim](http://code.compartmental.net/tools/minim/) de Processing qui permet la lecture de fichiers audios et dispose d'outils de traitement du signal. Dans cette première version Processing "découpe" le signal en fréquences et utilise l'intensité obtenue pour définir la taille des pics à dessiner. Pour se faire nous avons créé une matrice(Array) avec l'ensemble des valeurs à afficher.
+   Une fois le traitement effectué, les informations sont envoyées à l'Arduino qui dessine (methode draw) les pics. 
 Nous nous sommes en grande partie inspirés des travaux du Github [Afreiday](https://github.com/afreiday) , et la plus grosse modification à effectuer était de lire un fichier audio plutot qu'une sortie d'une carte son par exemple.
-Pour l'instant la connection est filaire mais nous avons déjà préparé un module bluetooth par lequel transitera l'information. La communication sans fil repose sur la possibilité qu'offre windows 10 de sélectionner et éditer les Ports sur lesquels se connectent les périphériques. Après une première connection , tout périphérique se voit attribuer un numéro COM et est enregistré. Par la suite nous avons utilisé ce numéro pour se connecter à l'Arduino et lui envoyer les données traitées :
+   Pour l'instant la connection est filaire mais nous avons déjà préparé un module bluetooth par lequel transitera l'information. La communication sans fil repose sur la possibilité qu'offre windows 10 de sélectionner et éditer les Ports sur lesquels se connectent les périphériques. Après une première connection , tout périphérique se voit attribuer un numéro COM et est enregistré. Par la suite nous avons utilisé ce numéro pour se connecter à l'Arduino et lui envoyer les données traitées :
 
 `String serial_port = "COM13"; //set the out port to send data from the FFT (uses Bluetooth port from windows configuration pannel)`
 
@@ -178,13 +177,13 @@ La source du signal audio est un objet de tye Minim dont nous signalons avant de
 
 ` in = minim.loadFile("centipede.mp3"); //set the minim source from the file (must be an mp3 in the same directory) `
 
-Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitement est quasi instantané et peut être visionné [ici](https://youtu.be/rAYWvyrwPwg).
+   Le résultat, bien que non adapté à la taille de notre écran est très concluant. Le traitement est quasi instantané et peut être visionné [ici](https://youtu.be/rAYWvyrwPwg).
 
 ### 2. Principe :
 
-Cette méthode repose sur l'utilisation de deux programmes qui fonctionnent de concert :
+   Cette méthode repose sur l'utilisation de deux programmes qui fonctionnent de concert :
 - [processFFT.pde](/Rendu%20Final/processFFT): 
-Le programme récupère en entrée un fichier mp3 et le convertit en objet minim. La FFT est effectué sur l'objet et nous récupérons un couple de valeurs fréquence et amplitude . Les fréquences sont triées et adaptées à la dimension des sections que nous imposons (il est difficile de représenter sur un écran de longueur 64 pix une plage de fréquence de 20hz à 20Khz). Après avoir fait une moyenne des valeurs obtenues sur chaque plages , nous initialisons un tableau contenant toutes les valeurs possibles :
+   Le programme récupère en entrée un fichier mp3 et le convertit en objet minim. La FFT est effectué sur l'objet et nous récupérons un couple de valeurs fréquence et amplitude . Les fréquences sont triées et adaptées à la dimension des sections que nous imposons (il est difficile de représenter sur un écran de longueur 64 pix une plage de fréquence de 20hz à 20Khz). Après avoir fait une moyenne des valeurs obtenues sur chaque plages , nous initialisons un tableau contenant toutes les valeurs possibles :
 ```
 for (int j = 0; j < num_levels; j++) {
          if (freq_height[j] < 200000 && freq_height[j] > 200) { freq_array[j] = 16; }
@@ -219,11 +218,11 @@ Par la suite , chaque valeur de fréquence corresondante à l'une de celles du t
     int f = in.substring(0, in.indexOf(sep)).toInt();  //stands for the first part of the data (before ":") frequency 
     int ff = in.substring(in.indexOf(sep) + sep.length()).toInt(); //stands for the second part of data : range 
 ```
-Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel noir si la valeur précédente n'est plus attribuée, bleu s'il s'agit d'une nouvelle valeur , jaune si elle dépasse un certain seuil. 
+   Les valeurs sont ensuites affichées sur l'écran sous forme de lignes verticales à l'aide de la méthode matrix.drawPixel qui dessine un pixel noir si la valeur précédente n'est plus attribuée, bleu s'il s'agit d'une nouvelle valeur , jaune si elle dépasse un certain seuil. 
 
 ## 2nd Programme : TFR via l'Arduino
 ### 1. Nouvelle librairie, nouveau concept :
-A ce stade , la première version utilisant un PC est proche de la complétion. Hormis quelques détails esthétiques, nous décidons de s'attaquer à un tout autre problème : réaliser la TFR en n'utilisant que la puissance de traitement de l'Arduino. Là était pour nous le véritable challenge étant donné que pléthore de méthodes de FFT classiques existaient déja sur le web mais aucune n'était restreinte aux capacités seules de l'arduino. C'est alors que nous avons découvert une nouvelle librairie [fft.h](https://github.com/kosme/arduinoFFT) de traitement dit "à points fixes". Mois gourmande en opérations élémentaires et implémentées dans l'IDE Arduino , cette méthode avait des avantages suffisants pour commencer une nouvelle version de notre projet.
+   A ce stade , la première version utilisant un PC est proche de la complétion. Hormis quelques détails esthétiques, nous décidons de s'attaquer à un tout autre problème : réaliser la TFR en n'utilisant que la puissance de traitement de l'Arduino. Là était pour nous le véritable challenge étant donné que pléthore de méthodes de FFT classiques existaient déja sur le web mais aucune n'était restreinte aux capacités seules de l'arduino. C'est alors que nous avons découvert une nouvelle librairie [fft.h](https://github.com/kosme/arduinoFFT) de traitement dit "à points fixes". Mois gourmande en opérations élémentaires et implémentées dans l'IDE Arduino , cette méthode avait des avantages suffisants pour commencer une nouvelle version de notre projet.
 ### 2. Principe :
    La TFR à points fixes fonctionne sur le principe suivant : Un sample du signal envoyé en entrée est capturé, il est analysé en moyenne sur cet intervalle de temps et un unique couple de valeurs fréquence:amplitude est récupéré. Bien moins précise, cette méthode permet néanmoins de contourner les limites techniques de la carte méga et ses 16Mhz de vitesse de calcul. 
 
@@ -274,10 +273,18 @@ Enfin, nous avons créé une dernière version pour processFFT.pde à but pureme
 Vidéo disponible [ici](https://youtu.be/8qS_j6wB5zk)
 
 # Rendu :
+En définitive , nous avons deux versions fonctionnelles de notre projet. La première utilisant processing est rapide et efficace sur un très grand éventail de fréquence s'étendant sur l'ensemble du spectre audible et au delà. Cette versions en temps réel peut être utilisée à des fins professionnelles et constitue un produit fini auquel il est possible d'attribuer des fonctions concrètes de traitement et d'affichage du signal. La seconde sous arduino , bien que lus lente et moins précise est satisfaisante comte tenu de ce que nous nous attendions à réaliser au moment de l'établissement de notre cahier des charges. 
 
-   C'est pour cela que nous avons envisagé d'utiliser une carte arduino Due. Nous sommes toutefois restés sur notre carte d'origine car le processeur ARM de la carte due n'est pas compatible avec la librairie fft.h.
+De nombreuses améliorations de nos projets sont possibles afin d'améliorer performances et simplicité d'utilisation parmi lesquelles :
 
+- L'utilisation d'un Arduino plus puissante pour la seconde version de notre projet. En effet, nous avons envisagé de passer sous Arduino Due cadencé à plus de 80 Mhz afin d'augmenter la fréquence de traitement et donc la précision , mais cette puce possède un proceceur ARM non compatible avec la librairie fft.h sur laquelle repose notre travail. Il serait possible de contourner ce problème en codant nous même une librairie compatible avec ARM en se basant sur les modules de FFT déjà existants. Cette amélioration bien que envisagée n'a pas été possible par manque de temps et surtout de connaissances sur la création de librairies.
 
+- l'utilisation de la plateforme Android en permettant à l'utilisateur de streamer en temps réel du contenu audio depuis son smartphone. Pour cela, il aurait fallu envisager la cration d'une application Android ou l'utilisation de MIT App Inventor qui prend en charge le Module BT HC-06 tel un périphérique média pour streamer du contenu et le traiter avec notre programme spectrum à la place de l'entrée analogique. Une autre méthode plus ambitieuse serait de faire tourner le programme processing sur le téléphone android (en sandbox ou à l'aide de javascript) et d'effectuer tout le traitement sur le smartphone avant d'envoyer les données traitées sur l'arduino. Pour le moment, il n'existe aucune version de processing sur Android prenant en charge l'utilisation de librairies telles que minim.
+
+- La modification de la fréquence d'échantillonage des pins analogiques de l'arduino afin de tirer pleinement profit des possibilités du micro. En effet les valeurs d'usine et les caractéristiques des entrées de l'arduino sont modifiables (aux risques de l'utilisateur) . Des ébauches de réponse quant à cette méthode peuvent être trouvées [ici](http://www.gammon.com.au/adc) et parlent d'un réglage pour des fréquences allant de 125 à 8000 khz mais cela 
+concerne l'ensemble des prescaleurs de l'arduino pouvant rentrer enconflit avec notre matériel et nos librairies.
+
+  
 
 
 
