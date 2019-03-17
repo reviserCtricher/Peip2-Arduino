@@ -251,7 +251,7 @@ Nous avons rencontré une série de problèmes qui ont retardé notre avancée. 
 
 Plans du [support](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf).
 Explication FabLab.
-![Plan du support](/Images/Scan2.png)
+![Plan du support](/Images/Scan2.jpg)
 
 ### 2. De nouveaux types d'affichages
    Une fois les différentes méthodes pour réaliser la FFT terminée, nous avons suivi notre cahier des charges en décidant de créer de nouveaux types d'affichages et d'améliorer ceux déja existants. Pour cela, nous avons commencé par créer un nouveau type d'affichage pour [spectrum.ino](/Rendu%20Final/spectrum).
