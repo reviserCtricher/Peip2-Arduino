@@ -95,7 +95,7 @@ Algorithme de notre projet
    Nous devons réaliser une TFR sur un signal provenant de différentes sources numériques (fichier audio) et analogiques (micro). C'est à ce moment que nous avons pris la décision de réaliser dans un premier temps une TFR sur le logiciel Processing (sur pc) et de revenir à un traitement unique sur Arduino plus tard. En effet, nous avions un doute quant à la capacité d'un Arduino à effectuer la TFR assez rapidement. 
 
 ## Le matériel
-Une grande partie du matériel nécessaire à la réalisation de notre projet etait déjà à notre disposition parmi :
+Une grande partie du matériel nécessaire à la réalisation de notre projet était déjà à notre disposition parmi :
 - [x] Arduino mega 
 
 ![Arduino Mega](Images/mega.jpg)
