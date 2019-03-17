@@ -251,7 +251,7 @@ Nous avons rencontré une série de problèmes qui ont retardé notre avancée. 
 ## Améliorations esthétiques
 ### 1. Construction du support
 
-   Nous avons tout d'abords décidés de passer une partie de séances restantes à concevoir un support qui servirait à la fois à soutenir les écrans, cacher le montage et l'alimentation électrique, et rendrait le tout plus esthétique. Pour ce faire, nous avons d'abords mis au point des plans pour le support, qui aurait la forme d'une boite. 
+   Nous avons tout d'abord décidé de passer une partie des séances restantes à concevoir un support qui servirait à la fois à soutenir les écrans, cacher le montage et l'alimentation électrique, et rendrait le tout plus esthétique. Pour ce faire, nous avons d'abords mis au point des plans pour le support, qui aurait la forme d'une boite. 
 Les premiers plans du [support](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf) sont présents ci-dessus
 Nous sommes passés une première fois au Fablab de Polytech, et nous sommes rendus comptes qu'il faudrait modifier les plans. En effet, la découpeuse laser que nous avions prévu d'utiliser ne pouvait découper des carrés de taille 32x32cm. Nous avons donc réalisé quelques modification, et lancé la construction des premières pièces. Malheureusement, à cause d'un souci de communication avec le gérant du fabLab, la longueur des pièces a été légèrement réduite. Hélas, cette longueur était vitale pour pouvoir placer les écrans dans la boite. Nous avons donné les pièces déja construites à Pascal Masson, et sommes repassés au FabLab avec de nouveaux plans :
 ![Plan du support](/Images/Scan2.jpg)
