@@ -248,8 +248,11 @@ Nous avons rencontré une série de problèmes qui ont retardé notre avancée. 
 
 ## Améliorations esthétiques
 ### 1. Construction du support
+
 Plans du [support](https://github.com/reviserCtricher/Peip2-Arduino/blob/master/Compte%20Rendu%20Th%C3%A9o/Boite%20Arduino.pdf).
 Explication FabLab.
+![Plan du support](/Images/Scan2.png)
+
 ### 2. De nouveaux types d'affichages
    Une fois les différentes méthodes pour réaliser la FFT terminée, nous avons suivi notre cahier des charges en décidant de créer de nouveaux types d'affichages et d'améliorer ceux déja existants. Pour cela, nous avons commencé par créer un nouveau type d'affichage pour [spectrum.ino](/Rendu%20Final/spectrum).
    Cette méthode d'affichage vise à limiter l'impact visuel du bruit, et augmenter la visibilité des signaux que nous arrivions à capter en branchant directement l'Arduino à un GBF. Il existe plusieurs versions de ce programme, ou on fait varier le nombre de cercles et ou affiche le résultat sur deux écrans, mais le principe est semblable. Elle récupère un certain nombre d'échantillons, et récupère le maximum d'amplitude parmis les valeurs de l'échantillon. Elle affiche le résultat sont forme d'un cercle par échantillon de fréquence dont le rayon varie en fonction du maximum obtenu. Lorsque ce maximum dépasse un seuil, le cercle devient en partie jaune :
@@ -289,16 +292,3 @@ concerne l'ensemble des prescaleurs de l'arduino pouvant rentrer enconflit avec 
 # Contributions et remerciements :
 Ce projet, en plus de conforter un plan professionel nous a permis d'acquérir des connaissances pratiques sur la gestion de travaux en se rapprochant au maximum des conditions de travail réel d'un ingénieur. En laissant libre cours à notre créativité nous avons pu apporter des solutions concrêtes aux problèmes successifs que nous avons rencontrés et avons mis en pratique l'ensemble des connaissances que nous avons acquises au cours de nos parcours respectifs. 
 Nous remercions monsieur Pascal Masson pour son aide à la concrétisation de ce projet ainsi que toutes l'équpe enseignante de Polytech Nice Sophia présente au cours des séances et lors de nos évaluations.
-
-
-
-
-
-
-
-
-
-
-
-
-
