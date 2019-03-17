@@ -129,7 +129,7 @@ Des éléments mineurs à acheter :
 ## Dans notre contexte
    L'Arduino possède un cadre d'application "type", une donnée à traiter déclenche une action. Ce principe est ce que nous attendons pour la réalisation de notre projet. Les données brutes (signaux sonores) doivent être traitées et leur résultat déclenche l'action d'affichage. Dans ce cas précis l'Arduino est une plateforme suffisante et peu coûteuse pour la réalisation du projet.
 
-# Déroulement :
+# Deroulement :
 ## Se familiariser avec le matériel
 ### 1. Premières séances:
    Notre professeur encadrant, connaissant notre sujet, a mis à notre disposition un écran LED 64X32 Pixels de marque Adafruit ainsi que l'alimentation correspondante. Pour la carte Arduino nous avons utilisé une carte MEGA 2560 possédant un plus grand nombre de ports et nous permettant d'anticiper un éventuel déficit de puissance de traitement. En recherchant la documentation liée à l'écran, nous sommes tombés sur le site officiel d'Adafruit Industries qui met en lien dans la description du produit une notice de branchement ainsi qu'un lien vers des exemples de programmes utilisant leur librairie. Les branchements détaillés sur [cette page](https://learn.adafruit.com/32x16-32x32-rgb-led-matrix/connecting-with-jumper-wires) nous ont permis d'éxecuter nos premiers affichages. Cet écran pour fonctionner nécessite deux librairies :
