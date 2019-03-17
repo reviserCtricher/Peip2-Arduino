@@ -81,6 +81,7 @@ Un lot d'écrans LED etait déjà à notre disposition en salle de TP, nous avon
    Le fonctionnement de la FFT nous pose toutefois un problème. Etant très gourmande en ressources, nous sommes conscients que la faible puissance de calcul de l'arduino peut être un frein à la réalisation d'un programme devant gérer à la fois l'affichage sur l'écran LCD et les calculs liés à la TFR. Nous avons dans un premier temps pensé à l'utilisation d'un PC afin de déléguer les calculs à un processeur plus puissant. Nous avons également à disposition des cartes Arduino Mega et Due, qui devraient en théorie être assez puissante pour réaliser des TFR sommaires.
 
 ![algo.jpg](/Images/algo.jpg)
+Algorithme de notre projet
 
 # Etablissement du cahier des charges :
 ## Découpage en fonctions
